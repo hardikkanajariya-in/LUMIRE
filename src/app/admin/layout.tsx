@@ -30,7 +30,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
 
-  // Close mobile sidebar on route change
   useEffect(() => {
     setSidebarOpen(false);
   }, [pathname]);
@@ -71,28 +70,62 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="flex h-screen overflow-hidden bg-gray-50">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div className="fixed inset-0 bg-black/40 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
       )}
 
-      {/* Sidebar */}
-      <aside className={`fixed inset-y-0 left-0 z-50 bg-charcoal text-white flex flex-col transition-all duration-300 ${
-        collapsed ? 'w-16' : 'w-60'
-      } ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
-        {/* Logo */}
+      {/* Mobile Sidebar (fixed overlay) */}
+      <aside className={`fixed inset-y-0 left-0 z-50 bg-charcoal text-white flex flex-col w-60 transition-transform duration-300 lg:hidden ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
         <div className="h-16 flex items-center justify-between px-4 border-b border-white/10">
-          {!collapsed && <Link href="/admin" className="font-display text-xl text-gold">Lumière</Link>}
-          <button onClick={() => setCollapsed(!collapsed)} className="hidden lg:block text-gray-400 hover:text-white">
-            <ChevronLeft size={18} className={`transition-transform ${collapsed ? 'rotate-180' : ''}`} />
-          </button>
-          <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-gray-400 hover:text-white">
+          <Link href="/admin" className="font-display text-xl text-gold">Lumière</Link>
+          <button onClick={() => setSidebarOpen(false)} className="text-gray-400 hover:text-white">
             <X size={20} />
           </button>
         </div>
+        <nav className="flex-1 py-4 overflow-y-auto">
+          {NAV_ITEMS.map((item) => {
+            const Icon = item.icon;
+            const active = isActive(item.href);
+            return (
+              <Link key={item.href} href={item.href}
+                className={`flex items-center gap-3 px-4 py-2.5 text-sm transition-colors mx-2 rounded-lg mb-0.5 ${
+                  active ? 'bg-gold/10 text-gold' : 'text-gray-400 hover:text-white hover:bg-white/5'
+                }`}>
+                <Icon size={18} className="shrink-0" />
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="border-t border-white/10 p-4">
+          <Link href="/" className="flex items-center gap-3 text-sm text-gray-400 hover:text-white mb-3">
+            <span>View Store</span>
+          </Link>
+          <button onClick={adminLogout} className="flex items-center gap-3 text-sm text-gray-400 hover:text-red-400 w-full">
+            <LogOut size={18} />
+            <span>Sign Out</span>
+          </button>
+          <p className="text-[10px] text-gray-600 mt-4 text-center">
+            Built by{' '}
+            <a href="https://hardikkanajariya.in" target="_blank" rel="noopener noreferrer" className="text-gold/60 hover:text-gold transition-colors">hardikkanajariya.in</a>
+          </p>
+        </div>
+      </aside>
 
-        {/* Nav */}
+      {/* Desktop Sidebar (static flex child) */}
+      <aside className={`hidden lg:flex flex-col flex-shrink-0 bg-charcoal text-white h-full overflow-y-auto transition-all duration-300 ${
+        collapsed ? 'w-16' : 'w-60'
+      }`}>
+        <div className="h-16 flex items-center justify-between px-4 border-b border-white/10 shrink-0">
+          {!collapsed && <Link href="/admin" className="font-display text-xl text-gold">Lumière</Link>}
+          <button onClick={() => setCollapsed(!collapsed)} className="text-gray-400 hover:text-white">
+            <ChevronLeft size={18} className={`transition-transform ${collapsed ? 'rotate-180' : ''}`} />
+          </button>
+        </div>
         <nav className="flex-1 py-4 overflow-y-auto">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
@@ -109,9 +142,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             );
           })}
         </nav>
-
-        {/* Footer */}
-        <div className="border-t border-white/10 p-4">
+        <div className="border-t border-white/10 p-4 shrink-0">
           <Link href="/" className={`flex items-center gap-3 text-sm text-gray-400 hover:text-white mb-3 ${collapsed ? 'justify-center' : ''}`}>
             {!collapsed && <span>View Store</span>}
           </Link>
@@ -129,18 +160,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
       </aside>
 
-      {/* Main */}
-      <div className={`min-h-screen transition-all duration-300 ${collapsed ? 'lg:ml-16' : 'lg:ml-60'}`}>
+      {/* Main content area */}
+      <div className="flex-1 flex flex-col overflow-hidden min-w-0">
         {/* Top bar */}
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center px-4 lg:px-6 sticky top-0 z-30">
+        <header className="h-16 bg-white border-b border-gray-200 flex items-center px-4 lg:px-6 shrink-0 z-30">
           <button onClick={() => setSidebarOpen(true)} className="lg:hidden mr-4">
             <Menu size={22} />
           </button>
           <div className="flex-1" />
           <span className="text-sm text-warm-gray">Admin</span>
         </header>
-        {/* Content */}
-        <main className="p-4 lg:p-6">{children}</main>
+        {/* Scrollable content */}
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6">{children}</main>
       </div>
     </div>
   );

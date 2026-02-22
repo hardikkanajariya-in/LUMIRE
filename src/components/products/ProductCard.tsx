@@ -23,7 +23,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/products/${product.slug}`} className="product-card block group rounded-lg">
       {/* Image */}
-      <div className="product-image relative overflow-hidden rounded-t-lg">
+      <div className="relative overflow-hidden rounded-t-lg aspect-square bg-cream">
         <img
           src={product.primaryImage}
           alt={product.name}
@@ -61,7 +61,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <p className="text-xs uppercase tracking-wider text-warm-gray mb-1">
           {product.category}
         </p>
-        <h3 className="font-display text-lg font-medium text-charcoal leading-tight mb-2">
+        <h3 className="font-display text-base sm:text-lg font-medium text-charcoal leading-tight mb-2 line-clamp-1">
           {product.name}
         </h3>
         <div className="flex items-center gap-2">

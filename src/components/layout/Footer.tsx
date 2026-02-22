@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-charcoal text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand */}
           <div>
             <h3 className="font-display text-2xl font-light tracking-wider mb-4">LUMIÈRE</h3>

@@ -56,16 +56,16 @@ export default function AdminProductsPage() {
 
       {/* Table */}
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-full text-sm">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Product</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Price</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden md:table-cell">Stock</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden md:table-cell">Status</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden lg:table-cell">Category</th>
-                <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium">Actions</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap min-w-[250px]">Product</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Price</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Stock</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Status</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Category</th>
+                <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -88,15 +88,15 @@ export default function AdminProductsPage() {
                       <p className="text-xs text-green-600">{formatPrice(product.salePrice)}</p>
                     )}
                   </td>
-                  <td className="py-3 px-4 hidden md:table-cell">
+                  <td className="py-3 px-4">
                     <span className={`text-sm ${product.stock < product.lowStockThreshold ? 'text-red-500 font-medium' : ''}`}>
                       {product.stock}
                     </span>
                   </td>
-                  <td className="py-3 px-4 hidden md:table-cell">
+                  <td className="py-3 px-4">
                     <StatusBadge status={product.status} />
                   </td>
-                  <td className="py-3 px-4 hidden lg:table-cell text-warm-gray">{product.category}</td>
+                  <td className="py-3 px-4 text-warm-gray whitespace-nowrap">{product.category}</td>
                   <td className="py-3 px-4 text-right">
                     <div className="relative inline-block">
                       <button onClick={() => setMenuOpen(menuOpen === product.id ? null : product.id)}

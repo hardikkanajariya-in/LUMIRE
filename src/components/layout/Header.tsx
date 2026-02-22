@@ -91,10 +91,20 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile Nav - Slide-in drawer */}
         {mobileOpen && (
-          <div className="md:hidden bg-white border-t border-border">
-            <nav className="flex flex-col py-4">
+          <div className="fixed inset-0 bg-black/40 z-40 md:hidden" onClick={() => setMobileOpen(false)} />
+        )}
+        <div className={`fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 md:hidden ${
+          mobileOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}>
+          <div className="flex items-center justify-between px-6 h-16 border-b border-border">
+            <span className="font-display text-xl font-light tracking-wider text-charcoal">LUMIÈRE</span>
+            <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
+              <X size={22} />
+            </button>
+          </div>
+          <nav className="flex flex-col py-4 overflow-y-auto h-[calc(100%-4rem)]">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -134,8 +144,7 @@ export default function Header() {
                 Contact
               </Link>
             </nav>
-          </div>
-        )}
+        </div>
       </header>
     </>
   );

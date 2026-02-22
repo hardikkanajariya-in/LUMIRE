@@ -77,7 +77,7 @@ export default function AdminDashboard() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         {STATS.map((stat) => {
           const Icon = stat.icon;
           return (
@@ -149,14 +149,14 @@ export default function AdminDashboard() {
               View All <ArrowRight size={12} />
             </Link>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="w-full overflow-x-auto">
+            <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="text-left py-2 text-xs text-warm-gray font-medium">Order</th>
-                  <th className="text-left py-2 text-xs text-warm-gray font-medium">Customer</th>
-                  <th className="text-left py-2 text-xs text-warm-gray font-medium">Total</th>
-                  <th className="text-left py-2 text-xs text-warm-gray font-medium">Status</th>
+                  <th className="text-left py-2 text-xs text-warm-gray font-medium whitespace-nowrap">Order</th>
+                  <th className="text-left py-2 text-xs text-warm-gray font-medium whitespace-nowrap">Customer</th>
+                  <th className="text-left py-2 text-xs text-warm-gray font-medium whitespace-nowrap">Total</th>
+                  <th className="text-left py-2 text-xs text-warm-gray font-medium whitespace-nowrap">Status</th>
                 </tr>
               </thead>
               <tbody>

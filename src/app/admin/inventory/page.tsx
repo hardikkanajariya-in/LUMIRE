@@ -74,16 +74,16 @@ export default function AdminInventoryPage() {
 
       {/* Table */}
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-full text-sm">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Product</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Price</th>
-                <th className="text-center py-3 px-4 text-xs text-warm-gray font-medium">Stock</th>
-                <th className="text-center py-3 px-4 text-xs text-warm-gray font-medium">Threshold</th>
-                <th className="text-center py-3 px-4 text-xs text-warm-gray font-medium">Status</th>
-                <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium">Action</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap min-w-[250px]">Product</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Price</th>
+                <th className="text-center py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Stock</th>
+                <th className="text-center py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Threshold</th>
+                <th className="text-center py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Status</th>
+                <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Action</th>
               </tr>
             </thead>
             <tbody>

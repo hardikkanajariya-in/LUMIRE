@@ -83,30 +83,30 @@ export default function AdminOrdersPage() {
 
       {/* Table */}
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-full text-sm">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Order #</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Customer</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden md:table-cell">Date</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Total</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden md:table-cell">Payment</th>
-                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Status</th>
-                <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium">Actions</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap min-w-[180px]">Order #</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap min-w-[160px]">Customer</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Date</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Total</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Payment</th>
+                <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Status</th>
+                <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Actions</th>
               </tr>
             </thead>
             <tbody>
               {filtered.map((order) => (
                 <tr key={order.id} className="border-b border-gray-50 hover:bg-gray-50/50">
-                  <td className="py-3 px-4 font-medium text-charcoal">{order.orderNumber}</td>
+                  <td className="py-3 px-4 font-medium text-charcoal whitespace-nowrap">{order.orderNumber}</td>
                   <td className="py-3 px-4">
                     <p className="text-charcoal">{order.customerName}</p>
                     <p className="text-xs text-warm-gray">{order.customerEmail}</p>
                   </td>
-                  <td className="py-3 px-4 text-warm-gray hidden md:table-cell">{formatDate(order.createdAt)}</td>
-                  <td className="py-3 px-4 font-medium">{formatPrice(order.total)}</td>
-                  <td className="py-3 px-4 hidden md:table-cell">
+                  <td className="py-3 px-4 text-warm-gray whitespace-nowrap">{formatDate(order.createdAt)}</td>
+                  <td className="py-3 px-4 font-medium whitespace-nowrap">{formatPrice(order.total)}</td>
+                  <td className="py-3 px-4">
                     <PaymentBadge status={order.paymentStatus} />
                   </td>
                   <td className="py-3 px-4">

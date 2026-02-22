@@ -94,7 +94,7 @@ export default function ProductDetailPage() {
 
       {/* Product Section */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           {/* Images */}
           <div>
             <div className="aspect-[3/4] bg-cream rounded-xl overflow-hidden mb-4">
@@ -122,7 +122,7 @@ export default function ProductDetailPage() {
                   <Star key={s} size={14} className={s <= Math.round(product.rating) ? 'fill-gold text-gold' : 'text-light-gray fill-light-gray'} />
                 ))}
               </div>
-              <span className="text-xs text-warm-gray">({product.reviewCount} reviews)</span>
+              <span className="text-xs text-warm-gray">({productReviews.length} reviews)</span>
             </div>
 
             <h1 className="font-display text-3xl lg:text-4xl font-light mb-4">{product.name}</h1>
@@ -246,7 +246,7 @@ export default function ProductDetailPage() {
                       <Star key={s} size={16} className={s <= Math.round(product.rating) ? 'fill-gold text-gold' : 'text-light-gray'} />
                     ))}
                   </div>
-                  <p className="text-xs text-warm-gray">{product.reviewCount} reviews</p>
+                  <p className="text-xs text-warm-gray">{productReviews.length} reviews</p>
                 </div>
                 <div className="space-y-2">
                   {ratingBreakdown.map((rb) => (

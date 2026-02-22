@@ -41,18 +41,18 @@ export default function AdminCustomersPage() {
         </select>
       </div>
 
-      <div className="flex gap-6 min-w-0">
+      <div className="flex flex-col lg:flex-row gap-6 min-w-0">
         {/* Table */}
         <div className={`bg-white rounded-lg border border-gray-200 overflow-hidden min-w-0 ${selected ? 'flex-1' : 'w-full'}`}>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="w-full overflow-x-auto">
+            <table className="min-w-full text-sm">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Customer</th>
-                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden md:table-cell">Orders</th>
-                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium hidden md:table-cell">Spent</th>
-                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium">Status</th>
-                  <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium">Actions</th>
+                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap min-w-[200px]">Customer</th>
+                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Orders</th>
+                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Spent</th>
+                  <th className="text-left py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Status</th>
+                  <th className="text-right py-3 px-4 text-xs text-warm-gray font-medium whitespace-nowrap">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -73,8 +73,8 @@ export default function AdminCustomersPage() {
                         </div>
                       </div>
                     </td>
-                    <td className="py-3 px-4 hidden md:table-cell text-warm-gray">{customer.totalOrders}</td>
-                    <td className="py-3 px-4 hidden md:table-cell font-medium">{formatPrice(customer.totalSpent)}</td>
+                    <td className="py-3 px-4 text-warm-gray whitespace-nowrap">{customer.totalOrders}</td>
+                    <td className="py-3 px-4 font-medium whitespace-nowrap">{formatPrice(customer.totalSpent)}</td>
                     <td className="py-3 px-4">
                       <span className={`px-2 py-0.5 rounded-full text-xs capitalize ${
                         customer.status === 'active' ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-600'
