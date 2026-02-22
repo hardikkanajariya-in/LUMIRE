@@ -27,12 +27,12 @@ export default function Header() {
   return (
     <>
       {/* Top bar */}
-      <div className="bg-charcoal text-white text-center py-2 text-xs tracking-widest uppercase font-body">
+      <div className="bg-cream text-warm-gray text-center py-2.5 text-[11px] tracking-[0.2em] uppercase font-body border-b border-border">
         Complimentary shipping on orders above ₹5,000
       </div>
 
       <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="page-container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Mobile menu button */}
             <button

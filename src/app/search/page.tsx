@@ -34,7 +34,7 @@ function SearchContent() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
+      <div className="page-container py-12">
         <h1 className="font-display text-3xl md:text-4xl font-light mb-6">Search Results</h1>
         <div className="mb-8">
           <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search for jewelry..."

@@ -19,10 +19,12 @@ export default function CustomOrdersPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-charcoal text-white py-24">
+      <section className="bg-cream py-24 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-6xl font-light mb-6">Bespoke Creations</h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Custom</span>
+          <h1 className="font-display text-4xl md:text-6xl font-light mb-6 text-charcoal">Bespoke Creations</h1>
+          <div className="gold-line mb-5" />
+          <p className="text-base sm:text-lg text-warm-gray max-w-2xl mx-auto">
             Your most meaningful moments deserve one-of-a-kind jewelry. Let us craft something extraordinary, just for you.
           </p>
         </div>
@@ -30,7 +32,7 @@ export default function CustomOrdersPage() {
 
       {/* Process Steps */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="page-container">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl font-light">The Bespoke Process</h2>
           </div>

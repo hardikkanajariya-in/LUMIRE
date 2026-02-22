@@ -137,10 +137,10 @@ export default function FaqPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-charcoal text-white py-20">
+      <section className="bg-cream py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4">Frequently Asked Questions</h1>
-          <p className="text-gray-400">Everything you need to know about shopping with Lumière.</p>
+          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">Frequently Asked Questions</h1>
+          <p className="text-warm-gray">Everything you need to know about shopping with Lumière.</p>
         </div>
       </section>
 
@@ -150,7 +150,7 @@ export default function FaqPage() {
           {FAQ_DATA.map((cat) => (
             <button key={cat.name} onClick={() => setActiveCategory(cat.name)}
               className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-all ${
-                activeCategory === cat.name ? 'bg-charcoal text-white' : 'border border-border text-warm-gray hover:border-gold'
+                activeCategory === cat.name ? 'bg-gold text-white' : 'border border-border text-warm-gray hover:border-gold'
               }`}>
               {cat.name}
             </button>

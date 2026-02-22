@@ -45,11 +45,11 @@ export default function GiftCardsPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-charcoal text-white py-20">
+      <section className="bg-cream py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <Gift className="mx-auto mb-4 text-gold" size={40} />
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4">Gift Cards</h1>
-          <p className="text-gray-400 max-w-lg mx-auto">
+          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">Gift Cards</h1>
+          <p className="text-warm-gray max-w-lg mx-auto">
             Give the gift of choice. A Lumière gift card lets your loved ones pick the jewelry that speaks to them.
           </p>
         </div>
@@ -123,15 +123,15 @@ export default function GiftCardsPage() {
           </div>
 
           {/* Preview Card */}
-          <div className="bg-gradient-to-br from-charcoal to-charcoal/90 rounded-lg p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-br from-cream to-cream-dark rounded-lg p-8 relative overflow-hidden border border-border">
             <div className="absolute top-0 right-0 w-40 h-40 bg-gold/10 rounded-full -mr-16 -mt-16" />
             <div className="relative">
-              <p className="font-display text-2xl text-gold mb-1">Lumière</p>
-              <p className="text-sm text-gray-400 mb-6">Gift Card</p>
-              <p className="font-display text-4xl mb-4">{formatPrice(finalAmount)}</p>
-              {recipientName && <p className="text-sm">To: {recipientName}</p>}
-              {senderName && <p className="text-sm text-gray-400">From: {senderName}</p>}
-              {message && <p className="text-sm italic text-gray-400 mt-3">&ldquo;{message}&rdquo;</p>}
+              <p className="font-display text-2xl text-gold-dark mb-1">Lumière</p>
+              <p className="text-sm text-warm-gray mb-6">Gift Card</p>
+              <p className="font-display text-4xl mb-4 text-charcoal">{formatPrice(finalAmount)}</p>
+              {recipientName && <p className="text-sm text-charcoal">To: {recipientName}</p>}
+              {senderName && <p className="text-sm text-warm-gray">From: {senderName}</p>}
+              {message && <p className="text-sm italic text-warm-gray mt-3">&ldquo;{message}&rdquo;</p>}
               <CreditCard className="absolute bottom-0 right-0 text-gold/20" size={64} />
             </div>
           </div>

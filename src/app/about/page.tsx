@@ -7,10 +7,12 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-charcoal text-white py-24 md:py-32">
+      <section className="bg-cream py-24 md:py-32 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-6xl font-light mb-6">Our Story</h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">About Lumière</span>
+          <h1 className="font-display text-4xl md:text-6xl font-light mt-3 mb-6 text-charcoal">Our Story</h1>
+          <div className="gold-line mb-6" />
+          <p className="text-base sm:text-lg text-warm-gray max-w-2xl mx-auto leading-relaxed">
             Born from a passion for timeless beauty and exceptional craftsmanship, 
             Lumière has been creating heirloom-quality jewelry since 2018.
           </p>
@@ -19,7 +21,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="page-container">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="aspect-[4/5] rounded-xl overflow-hidden shadow-lg">
               <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&h=750&fit=crop" alt="Our Founder" className="w-full h-full object-cover" />
@@ -51,7 +53,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="py-20 bg-cream">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="page-container">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl md:text-4xl font-light mt-4">What We Stand For</h2>
           </div>
@@ -73,7 +75,7 @@ export default function AboutPage() {
 
       {/* Workshop */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="page-container">
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { title: 'The Workshop', img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=600&fit=crop' },
@@ -93,7 +95,7 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="page-container">
           <div className="text-center mb-14">
             <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">The Team</span>
             <h2 className="font-display text-3xl md:text-4xl font-light mt-4">The Hands Behind the Craft</h2>
@@ -118,14 +120,16 @@ export default function AboutPage() {
       </section>
 
       {/* Sustainability */}
-      <section className="py-20 bg-charcoal text-white">
+      <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-light mb-6">Our Sustainability Pledge</h2>
-          <p className="text-gray-400 leading-relaxed mb-4">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Sustainability</span>
+          <h2 className="font-display text-3xl md:text-4xl font-light mt-3 mb-6 text-charcoal">Our Sustainability Pledge</h2>
+          <div className="gold-line mb-6" />
+          <p className="text-warm-gray leading-relaxed mb-4">
             We believe luxury and responsibility go hand in hand. By 2027, we pledge to achieve 
             100% recycled precious metals, carbon-neutral operations, and zero-waste packaging.
           </p>
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-warm-gray leading-relaxed">
             Every Lumière purchase contributes to our partnership with environmental organizations 
             working to protect natural habitats where gemstones are found.
           </p>

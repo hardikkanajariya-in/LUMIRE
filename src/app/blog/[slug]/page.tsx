@@ -30,15 +30,15 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-charcoal text-white py-20">
+      <section className="bg-cream py-20 border-b border-border">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gold mb-6 transition-colors">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-warm-gray hover:text-gold mb-6 transition-colors">
             <ArrowLeft size={16} />
             Back to Journal
           </Link>
-          <span className="block text-xs uppercase tracking-wider text-gold mb-4">{post.category}</span>
-          <h1 className="font-display text-3xl md:text-5xl font-light mb-4 leading-tight">{post.title}</h1>
-          <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
+          <span className="block text-xs uppercase tracking-wider text-gold-dark mb-4">{post.category}</span>
+          <h1 className="font-display text-3xl md:text-5xl font-light mb-4 leading-tight text-charcoal">{post.title}</h1>
+          <div className="flex items-center justify-center gap-4 text-sm text-warm-gray">
             <span>{post.author}</span>
             <span>·</span>
             <span>{formatDate(post.publishedAt)}</span>

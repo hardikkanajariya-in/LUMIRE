@@ -1,10 +1,10 @@
 export default function ReturnsPage() {
   return (
     <div className="min-h-screen bg-ivory">
-      <section className="bg-charcoal text-white py-16">
+      <section className="bg-cream py-16 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl font-light mb-2">Return & Refund Policy</h1>
-          <p className="text-gray-400 text-sm">Hassle-free returns, because your satisfaction matters.</p>
+          <h1 className="font-display text-4xl font-light mb-2 text-charcoal">Return & Refund Policy</h1>
+          <p className="text-warm-gray text-sm">Hassle-free returns, because your satisfaction matters.</p>
         </div>
       </section>
       <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">

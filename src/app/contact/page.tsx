@@ -14,14 +14,14 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <section className="bg-charcoal text-white py-20">
+      <section className="bg-cream py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4">Get in Touch</h1>
-          <p className="text-gray-400">We&apos;d love to hear from you. Reach out for inquiries, custom orders, or just to say hello.</p>
+          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">Get in Touch</h1>
+          <p className="text-warm-gray">We&apos;d love to hear from you. Reach out for inquiries, custom orders, or just to say hello.</p>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16">
+      <div className="page-container py-16">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
           {/* Contact Form */}
           <div>

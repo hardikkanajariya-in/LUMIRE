@@ -38,7 +38,7 @@ export default function WishlistPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
+      <div className="page-container py-12">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="font-display text-3xl md:text-4xl font-light">Wishlist</h1>

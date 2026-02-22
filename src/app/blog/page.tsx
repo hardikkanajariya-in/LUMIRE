@@ -16,23 +16,23 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <section className="bg-charcoal text-white py-20">
+      <section className="bg-cream py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4">The Journal</h1>
-          <p className="text-gray-400">Stories, guides, and inspiration from the world of fine jewelry.</p>
+          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">The Journal</h1>
+          <p className="text-warm-gray">Stories, guides, and inspiration from the world of fine jewelry.</p>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
+      <div className="page-container py-12">
         {/* Category Filters */}
         <div className="flex flex-wrap gap-2 mb-10">
           <button onClick={() => setActiveCategory('')}
-            className={`px-4 py-2 rounded-full text-sm transition-all ${!activeCategory ? 'bg-charcoal text-white' : 'border border-border text-warm-gray hover:border-gold'}`}>
+            className={`px-4 py-2 rounded-full text-sm transition-all ${!activeCategory ? 'bg-gold text-white' : 'border border-border text-warm-gray hover:border-gold'}`}>
             All
           </button>
           {blogCategories.map((cat) => (
             <button key={cat} onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm transition-all ${activeCategory === cat ? 'bg-charcoal text-white' : 'border border-border text-warm-gray hover:border-gold'}`}>
+              className={`px-4 py-2 rounded-full text-sm transition-all ${activeCategory === cat ? 'bg-gold text-white' : 'border border-border text-warm-gray hover:border-gold'}`}>
               {cat}
             </button>
           ))}

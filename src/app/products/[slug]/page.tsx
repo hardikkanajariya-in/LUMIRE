@@ -80,7 +80,7 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6 pb-4">
+      <div className="page-container pt-6 pb-4">
         <div className="flex items-center gap-2 text-xs text-warm-gray">
           <Link href="/" className="hover:text-gold transition-colors">Home</Link>
           <span>/</span>
@@ -93,7 +93,7 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Product Section */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-20">
+      <div className="page-container pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           {/* Images */}
           <div>

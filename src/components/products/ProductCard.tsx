@@ -21,23 +21,23 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <Link href={`/products/${product.slug}`} className="product-card block group rounded-lg">
+    <Link href={`/products/${product.slug}`} className="product-card block group">
       {/* Image */}
-      <div className="product-image relative overflow-hidden rounded-t-lg">
+      <div className="product-image relative">
         <img
           src={product.primaryImage}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+          className="w-full h-full object-cover"
           loading="lazy"
         />
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
           {product.isNewArrival && (
-            <span className="badge badge-gold">New</span>
+            <span className="badge badge-gold text-[10px]">New</span>
           )}
           {product.salePrice && (
-            <span className="badge badge-rose">
+            <span className="badge badge-rose text-[10px]">
               -{getDiscountPercentage(product.originalPrice, product.salePrice)}%
             </span>
           )}
@@ -46,26 +46,29 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Wishlist */}
         <button
           onClick={toggleWishlist}
-          className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center transition-all hover:bg-white"
+          className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-sm"
           aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         >
           <Heart
-            size={16}
+            size={15}
             className={wishlisted ? 'fill-rose text-rose' : 'text-warm-gray'}
           />
         </button>
+
+        {/* Quick view overlay */}
+        <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 transition-colors duration-300" />
       </div>
 
       {/* Info */}
-      <div className="p-4">
-        <p className="text-xs uppercase tracking-wider text-warm-gray mb-1">
+      <div className="product-info">
+        <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.15em] text-gold-dark mb-1.5 font-medium">
           {product.category}
         </p>
-        <h3 className="font-display text-sm sm:text-base lg:text-lg font-medium text-charcoal leading-tight mb-2 line-clamp-1">
+        <h3 className="font-display text-base sm:text-lg font-semibold text-charcoal leading-snug mb-2 line-clamp-1">
           {product.name}
         </h3>
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-gold">
+        <div className="flex items-baseline gap-2.5">
+          <span className="font-display text-lg sm:text-xl font-semibold text-gold-dark">
             {formatPrice(product.salePrice || product.originalPrice)}
           </span>
           {product.salePrice && (
@@ -75,12 +78,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         {/* Rating */}
-        <div className="flex items-center gap-1 mt-2">
-          <div className="flex">
+        <div className="flex items-center gap-1.5 mt-2.5 pt-2.5 border-t border-border/60">
+          <div className="flex gap-0.5">
             {[1, 2, 3, 4, 5].map((star) => (
               <svg
                 key={star}
-                className={`w-3 h-3 ${
+                className={`w-3.5 h-3.5 ${
                   star <= Math.round(product.rating)
                     ? 'text-gold fill-gold'
                     : 'text-light-gray fill-light-gray'
@@ -91,7 +94,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </svg>
             ))}
           </div>
-          <span className="text-xs text-warm-gray">({product.reviewCount})</span>
+          <span className="text-[11px] text-warm-gray">({product.reviewCount})</span>
         </div>
       </div>
     </Link>

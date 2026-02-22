@@ -168,7 +168,7 @@ function ProductsContent() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6">
+      <div className="page-container pt-6">
         <div className="flex items-center gap-2 text-xs text-warm-gray">
           <Link href="/" className="hover:text-gold transition-colors">Home</Link>
           <span>/</span>
@@ -183,14 +183,14 @@ function ProductsContent() {
       </div>
 
       {/* Title */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10">
+      <div className="page-container py-8 sm:py-10">
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light">
           {selectedCategory ? categories.find((c) => c.slug === selectedCategory)?.name || 'Collections' : 'All Collections'}
         </h1>
         <p className="text-sm text-warm-gray mt-2">{filtered.length} pieces</p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-20">
+      <div className="page-container pb-20">
         {/* Mobile Filter Button */}
         <div className="lg:hidden flex items-center justify-between mb-6">
           <button onClick={() => setMobileFiltersOpen(true)} className="flex items-center gap-2 text-sm border border-border rounded-full px-4 py-2.5 hover:border-gold transition-colors">
