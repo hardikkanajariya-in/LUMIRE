@@ -20,17 +20,19 @@
   --font-body: 'DM Sans', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-body);
-  color: var(--color-charcoal);
-  background-color: var(--color-ivory);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--color-charcoal);
+    background-color: var(--color-ivory);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
 }
+
+@layer components {
 
 .font-display { font-family: var(--font-display); }
 .font-body { font-family: var(--font-body); }
@@ -180,3 +182,5 @@ body {
   100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
 .confetti-piece { position: fixed; width: 10px; height: 10px; top: -10px; animation: confetti-fall 3s ease-in-out forwards; }
+
+} /* end @layer components */
