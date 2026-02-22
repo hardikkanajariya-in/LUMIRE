@@ -77,9 +77,9 @@ function HeroSection() {
 
 function CategoryRow() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="page-container">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-14 md:mb-20">
           <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Explore</span>
           <h2 className="font-display text-3xl md:text-4xl font-light mt-3">Shop by Category</h2>
           <div className="gold-line mt-4" />
@@ -102,9 +102,9 @@ function CategoryRow() {
 
 function ProductSection({ title, subtitle, items }: { title: string; subtitle: string; items: typeof products }) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-32">
       <div className="page-container">
-        <div className="flex items-end justify-between mb-10 sm:mb-14">
+        <div className="flex items-end justify-between mb-12 sm:mb-16">
           <div>
             <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Collection</span>
             <h2 className="font-display text-3xl md:text-4xl font-light mt-2">{title}</h2>
@@ -129,9 +129,9 @@ function ProductSection({ title, subtitle, items }: { title: string; subtitle: s
 
 function BrandStory() {
   return (
-    <section className="py-16 md:py-24 bg-cream">
+    <section className="py-20 md:py-32 bg-cream">
       <div className="page-container">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-center">
           <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-border/30">
             <img
               src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&auto=format&fit=crop&q=80"
@@ -171,9 +171,9 @@ function TestimonialCarousel() {
     scrollRef.current.scrollTo({ left: newIndex * 380, behavior: 'smooth' });
   };
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="page-container">
-        <div className="flex items-end justify-between mb-10 sm:mb-14">
+        <div className="flex items-end justify-between mb-12 sm:mb-16">
           <div>
             <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Testimonials</span>
             <h2 className="font-display text-3xl md:text-4xl font-light mt-2">What Our Clients Say</h2>
@@ -211,7 +211,7 @@ function TestimonialCarousel() {
 function AsSeenIn() {
   const brands = ['Vogue India', 'Elle', 'Harper\'s Bazaar', 'GQ India', 'Femina'];
   return (
-    <section className="py-12 md:py-16 border-y border-border bg-ivory">
+    <section className="py-16 md:py-20 border-y border-border bg-ivory">
       <div className="page-container">
         <p className="text-center text-[11px] uppercase tracking-[0.3em] text-warm-gray mb-8 font-medium">As Seen In</p>
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-16">
@@ -228,7 +228,7 @@ function Newsletter() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section className="py-20 md:py-28 bg-cream relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-cream relative overflow-hidden">
       {/* Subtle decorative pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #C9A84C 1px, transparent 0)', backgroundSize: '32px 32px' }} />
       

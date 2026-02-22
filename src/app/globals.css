@@ -150,9 +150,9 @@ body {
 }
 .testimonial-card:hover { border-color: var(--color-gold-light); box-shadow: 0 12px 32px rgba(201,168,76,0.08); }
 
-.section-spacing { padding-top: 4rem; padding-bottom: 4rem; }
-@media (min-width: 768px) { .section-spacing { padding-top: 5rem; padding-bottom: 5rem; } }
-@media (min-width: 1024px) { .section-spacing { padding-top: 6rem; padding-bottom: 6rem; } }
+.section-spacing { padding-top: 5rem; padding-bottom: 5rem; }
+@media (min-width: 768px) { .section-spacing { padding-top: 6rem; padding-bottom: 6rem; } }
+@media (min-width: 1024px) { .section-spacing { padding-top: 8rem; padding-bottom: 8rem; } }
 
 /* Section titles */
 .section-title {
