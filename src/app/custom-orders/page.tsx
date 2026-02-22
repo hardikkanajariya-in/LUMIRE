@@ -20,8 +20,7 @@ export default function CustomOrdersPage() {
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
       <section className="bg-charcoal text-white py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <Sparkles size={24} className="text-gold mx-auto mb-4" />
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl md:text-6xl font-light mb-6">Bespoke Creations</h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Your most meaningful moments deserve one-of-a-kind jewelry. Let us craft something extraordinary, just for you.
@@ -31,7 +30,7 @@ export default function CustomOrdersPage() {
 
       {/* Process Steps */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl font-light">The Bespoke Process</h2>
           </div>
@@ -54,7 +53,7 @@ export default function CustomOrdersPage() {
 
       {/* Custom Request Form */}
       <section className="py-20 bg-cream">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+        <div className="max-w-2xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl font-light mb-3">Start Your Custom Order</h2>
             <p className="text-sm text-warm-gray">Tell us about your dream piece and we&apos;ll bring it to life.</p>

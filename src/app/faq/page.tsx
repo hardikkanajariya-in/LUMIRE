@@ -138,13 +138,13 @@ export default function FaqPage() {
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
       <section className="bg-charcoal text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-light mb-4">Frequently Asked Questions</h1>
           <p className="text-gray-400">Everything you need to know about shopping with Lumière.</p>
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         {/* Category Tabs */}
         <div className="flex overflow-x-auto gap-2 mb-8 pb-2 no-scrollbar">
           {FAQ_DATA.map((cat) => (

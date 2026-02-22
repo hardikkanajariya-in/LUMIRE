@@ -2,12 +2,12 @@ export default function ReturnsPage() {
   return (
     <div className="min-h-screen bg-ivory">
       <section className="bg-charcoal text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl font-light mb-2">Return & Refund Policy</h1>
           <p className="text-gray-400 text-sm">Hassle-free returns, because your satisfaction matters.</p>
         </div>
       </section>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         <div className="prose prose-sm max-w-none space-y-8">
           {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-4 mb-8">

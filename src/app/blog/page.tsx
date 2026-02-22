@@ -17,13 +17,13 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-ivory">
       <section className="bg-charcoal text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-light mb-4">The Journal</h1>
           <p className="text-gray-400">Stories, guides, and inspiration from the world of fine jewelry.</p>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         {/* Category Filters */}
         <div className="flex flex-wrap gap-2 mb-10">
           <button onClick={() => setActiveCategory('')}
@@ -43,8 +43,8 @@ export default function BlogPage() {
           {filtered.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group">
               <article className="bg-white border border-border rounded-lg overflow-hidden hover:border-gold transition-all">
-                <div className="aspect-[16/10] bg-cream flex items-center justify-center">
-                  <p className="font-display text-warm-gray italic text-sm">{post.category}</p>
+                <div className="aspect-[16/10] bg-cream overflow-hidden">
+                  <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <span className="text-xs uppercase tracking-wider text-gold">{post.category}</span>

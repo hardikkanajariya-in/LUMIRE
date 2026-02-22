@@ -2,12 +2,12 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-ivory">
       <section className="bg-charcoal text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl font-light mb-2">Terms & Conditions</h1>
           <p className="text-gray-400 text-sm">Last updated: January 1, 2025</p>
         </div>
       </section>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         <div className="prose prose-sm max-w-none space-y-8">
           <p className="text-warm-gray leading-relaxed">
             Welcome to Lumière. By accessing and using our website, you agree to be bound by these Terms

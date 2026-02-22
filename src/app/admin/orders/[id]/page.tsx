@@ -88,7 +88,13 @@ export default function OrderDetailPage() {
           <div className="space-y-3">
             {order.items.map((item, idx) => (
               <div key={idx} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
-                <div className="w-14 h-14 rounded bg-cream border border-gray-100 shrink-0" />
+                <div className="w-14 h-14 rounded bg-cream border border-gray-100 shrink-0 overflow-hidden">
+                  {item.productImage ? (
+                    <img src={item.productImage} alt={item.productName} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-[10px] text-warm-gray flex items-center justify-center w-full h-full">IMG</span>
+                  )}
+                </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-charcoal text-sm">{item.productName}</p>
                   <p className="text-xs text-warm-gray">

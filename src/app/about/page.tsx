@@ -8,8 +8,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
       <section className="bg-charcoal text-white py-24 md:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <Sparkles size={24} className="text-gold mx-auto mb-4" />
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl md:text-6xl font-light mb-6">Our Story</h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Born from a passion for timeless beauty and exceptional craftsmanship, 
@@ -20,13 +19,10 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="aspect-[4/5] bg-cream rounded-lg border border-border flex items-center justify-center">
-              <div className="text-center">
-                <Sparkles size={40} className="text-gold mx-auto mb-3" />
-                <p className="font-display text-warm-gray italic">Our Founder</p>
-              </div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="aspect-[4/5] rounded-xl overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&h=750&fit=crop" alt="Our Founder" className="w-full h-full object-cover" />
             </div>
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">The Beginning</span>
@@ -55,9 +51,8 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="py-20 bg-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">Our Values</span>
             <h2 className="font-display text-3xl md:text-4xl font-light mt-4">What We Stand For</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -78,11 +73,18 @@ export default function AboutPage() {
 
       {/* Workshop */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid md:grid-cols-3 gap-6">
-            {['The Workshop', 'Hand Setting', 'Final Polish'].map((title) => (
-              <div key={title} className="aspect-square bg-cream rounded-lg border border-border flex items-center justify-center">
-                <p className="font-display text-warm-gray italic">{title}</p>
+            {[
+              { title: 'The Workshop', img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=600&fit=crop' },
+              { title: 'Hand Setting', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&h=600&fit=crop' },
+              { title: 'Final Polish', img: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&h=600&fit=crop' },
+            ].map((item) => (
+              <div key={item.title} className="aspect-square rounded-xl overflow-hidden relative group">
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div className="absolute inset-0 bg-black/30 flex items-end p-6">
+                  <p className="font-display text-white text-lg">{item.title}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -91,23 +93,23 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-14">
             <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">The Team</span>
             <h2 className="font-display text-3xl md:text-4xl font-light mt-4">The Hands Behind the Craft</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {[
-              { name: 'Marie Laurent', role: 'Founder & Creative Director' },
-              { name: 'Rajan Patel', role: 'Master Goldsmith' },
-              { name: 'Sophie Chen', role: 'Head of Design' },
-              { name: 'Arjun Nair', role: 'Gemologist' },
+              { name: 'Marie Laurent', role: 'Founder & Creative Director', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face' },
+              { name: 'Rajan Patel', role: 'Master Goldsmith', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
+              { name: 'Sophie Chen', role: 'Head of Design', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face' },
+              { name: 'Arjun Nair', role: 'Gemologist', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face' },
             ].map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-cream border border-border flex items-center justify-center">
-                  <Users size={28} className="text-warm-gray" />
+                <div className="w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <h4 className="font-display text-lg">{member.name}</h4>
+                <h4 className="font-display text-base sm:text-lg">{member.name}</h4>
                 <p className="text-xs text-warm-gray mt-1">{member.role}</p>
               </div>
             ))}
@@ -117,8 +119,7 @@ export default function AboutPage() {
 
       {/* Sustainability */}
       <section className="py-20 bg-charcoal text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <Leaf size={28} className="text-gold mx-auto mb-4" />
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-light mb-6">Our Sustainability Pledge</h2>
           <p className="text-gray-400 leading-relaxed mb-4">
             We believe luxury and responsibility go hand in hand. By 2027, we pledge to achieve 
@@ -133,7 +134,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h2 className="font-display text-3xl font-light mb-6">Ready to discover your piece?</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/products" className="btn-primary">Explore Collection</Link>

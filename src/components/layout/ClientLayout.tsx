@@ -15,7 +15,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {!isAdmin && <Header />}
       {!isAdmin && <CartDrawer />}
       {!isAdmin && <SearchOverlay />}
-      <main>{children}</main>
+      <main className="min-w-0 overflow-x-hidden">{children}</main>
       {!isAdmin && <Footer />}
     </>
   );

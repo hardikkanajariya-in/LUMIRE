@@ -90,8 +90,8 @@ export default function SearchOverlay() {
                     onClick={closeSearch}
                     className="flex items-center gap-4 p-3 hover:bg-cream rounded-lg transition-colors"
                   >
-                    <div className="w-16 h-20 bg-cream rounded flex-shrink-0 flex items-center justify-center">
-                      <span className="text-[10px] text-warm-gray">IMG</span>
+                    <div className="w-16 h-20 bg-cream rounded-lg flex-shrink-0 overflow-hidden">
+                      <img src={product.primaryImage} alt={product.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium truncate">{product.name}</p>

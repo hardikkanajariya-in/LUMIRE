@@ -15,14 +15,14 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-ivory">
       <section className="bg-charcoal text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-light mb-4">Get in Touch</h1>
           <p className="text-gray-400">We&apos;d love to hear from you. Reach out for inquiries, custom orders, or just to say hello.</p>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
           {/* Contact Form */}
           <div>
             <h2 className="font-display text-2xl mb-6">Send Us a Message</h2>
@@ -86,9 +86,8 @@ export default function ContactPage() {
               <MessageCircle size={18} /> Chat on WhatsApp
             </a>
 
-            {/* Map placeholder */}
-            <div className="mt-8 aspect-video bg-cream rounded-lg border border-border flex items-center justify-center">
-              <p className="font-display text-warm-gray italic">Map Location</p>
+            <div className="mt-8 aspect-video rounded-xl overflow-hidden shadow-md">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800&h=450&fit=crop" alt="Lumière Boutique" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

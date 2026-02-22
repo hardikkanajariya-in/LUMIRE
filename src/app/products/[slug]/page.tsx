@@ -80,7 +80,7 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-4">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6 pb-4">
         <div className="flex items-center gap-2 text-xs text-warm-gray">
           <Link href="/" className="hover:text-gold transition-colors">Home</Link>
           <span>/</span>
@@ -93,24 +93,22 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Product Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Images */}
           <div>
-            <div className="aspect-[3/4] bg-cream rounded-lg flex items-center justify-center mb-4 overflow-hidden">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-border/50 flex items-center justify-center">
-                  <Sparkles size={28} className="text-gold" />
-                </div>
-                <p className="font-display text-warm-gray italic text-lg">{product.name}</p>
-                <p className="text-xs text-warm-gray mt-1">{product.category}</p>
-              </div>
+            <div className="aspect-[3/4] bg-cream rounded-xl overflow-hidden mb-4">
+              <img
+                src={product.images[selectedImage] || product.primaryImage}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="grid grid-cols-4 gap-3">
-              {[0, 1, 2, 3].map((i) => (
+              {product.images.slice(0, 4).map((img, i) => (
                 <button key={i} onClick={() => setSelectedImage(i)}
-                  className={`aspect-square bg-cream rounded flex items-center justify-center border-2 transition-colors ${selectedImage === i ? 'border-gold' : 'border-transparent hover:border-border'}`}>
-                  <span className="text-[10px] text-warm-gray">{i + 1}</span>
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${selectedImage === i ? 'border-gold' : 'border-transparent hover:border-border'}`}>
+                  <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

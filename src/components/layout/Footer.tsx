@@ -97,6 +97,10 @@ export default function Footer() {
           <p className="text-xs text-gray-500">
             © 2025 Lumière. All rights reserved. Crafted with love in India.
           </p>
+          <p className="text-xs text-gray-500">
+            Built by{' '}
+            <a href="https://hardikkanajariya.in" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">hardikkanajariya.in</a>
+          </p>
           <div className="flex gap-6">
             <span className="text-xs text-gray-500">Visa</span>
             <span className="text-xs text-gray-500">Mastercard</span>

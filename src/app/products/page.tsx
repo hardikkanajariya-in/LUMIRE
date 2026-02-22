@@ -168,7 +168,7 @@ function ProductsContent() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-6">
         <div className="flex items-center gap-2 text-xs text-warm-gray">
           <Link href="/" className="hover:text-gold transition-colors">Home</Link>
           <span>/</span>
@@ -183,21 +183,21 @@ function ProductsContent() {
       </div>
 
       {/* Title */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <h1 className="font-display text-4xl md:text-5xl font-light">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light">
           {selectedCategory ? categories.find((c) => c.slug === selectedCategory)?.name || 'Collections' : 'All Collections'}
         </h1>
         <p className="text-sm text-warm-gray mt-2">{filtered.length} pieces</p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pb-20">
         {/* Mobile Filter Button */}
         <div className="lg:hidden flex items-center justify-between mb-6">
-          <button onClick={() => setMobileFiltersOpen(true)} className="flex items-center gap-2 text-sm border border-border rounded-full px-4 py-2">
+          <button onClick={() => setMobileFiltersOpen(true)} className="flex items-center gap-2 text-sm border border-border rounded-full px-4 py-2.5 hover:border-gold transition-colors">
             <SlidersHorizontal size={16} /> Filters
           </button>
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="text-sm border border-border rounded-full px-4 py-2 bg-white outline-none">
+            className="text-sm border border-border rounded-full px-4 py-2.5 bg-white outline-none">
             <option value="newest">Newest</option>
             <option value="price-low">Price: Low–High</option>
             <option value="price-high">Price: High–Low</option>
@@ -210,21 +210,21 @@ function ProductsContent() {
         {activeFilters.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
             {activeFilters.map((f, i) => (
-              <span key={i} className="flex items-center gap-1.5 px-3 py-1.5 bg-cream rounded-full text-xs">
+              <span key={i} className="flex items-center gap-1.5 px-3 py-1.5 bg-cream border border-border rounded-full text-xs font-medium">
                 {f.label}
-                <button onClick={f.onRemove} aria-label={`Remove ${f.label} filter`}><X size={12} /></button>
+                <button onClick={f.onRemove} className="hover:text-rose transition-colors" aria-label={`Remove ${f.label} filter`}><X size={12} /></button>
               </span>
             ))}
           </div>
         )}
 
-        <div className="flex gap-8">
+        <div className="flex gap-10">
           {/* Desktop Sidebar */}
           <aside className="hidden lg:block w-60 flex-shrink-0 sticky top-24 self-start">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xs uppercase tracking-wider font-medium">Filters</h2>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="text-xs border border-border rounded px-2 py-1 bg-white outline-none">
+                className="text-xs border border-border rounded-lg px-2 py-1.5 bg-white outline-none">
                 <option value="newest">Newest</option>
                 <option value="price-low">Price ↑</option>
                 <option value="price-high">Price ↓</option>
@@ -244,7 +244,7 @@ function ProductsContent() {
                 <button onClick={clearAll} className="btn-primary">Clear Filters</button>
               </div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -259,7 +259,7 @@ function ProductsContent() {
         <>
           <div className="fixed inset-0 bg-black/40 z-50 lg:hidden" onClick={() => setMobileFiltersOpen(false)} />
           <div className="fixed bottom-0 left-0 right-0 bg-white z-50 lg:hidden rounded-t-2xl max-h-[80vh] overflow-y-auto">
-            <div className="flex items-center justify-between p-4 border-b border-border sticky top-0 bg-white">
+            <div className="flex items-center justify-between p-5 border-b border-border sticky top-0 bg-white rounded-t-2xl">
               <h2 className="font-display text-lg">Filters</h2>
               <button onClick={() => setMobileFiltersOpen(false)} aria-label="Close filters"><X size={20} /></button>
             </div>

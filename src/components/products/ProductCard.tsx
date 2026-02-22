@@ -21,17 +21,15 @@ export default function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <Link href={`/products/${product.slug}`} className="product-card block group">
+    <Link href={`/products/${product.slug}`} className="product-card block group rounded-lg">
       {/* Image */}
-      <div className="product-image relative">
-        <div className="w-full h-full bg-cream flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-border/50 flex items-center justify-center">
-              <span className="text-warm-gray text-xs font-display">L</span>
-            </div>
-            <span className="text-xs text-warm-gray font-display">{product.category}</span>
-          </div>
-        </div>
+      <div className="product-image relative overflow-hidden rounded-t-lg">
+        <img
+          src={product.primaryImage}
+          alt={product.name}
+          className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+          loading="lazy"
+        />
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">

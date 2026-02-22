@@ -31,7 +31,7 @@ export default function BlogPostPage() {
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
       <section className="bg-charcoal text-white py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gold mb-6 transition-colors">
             <ArrowLeft size={16} />
             Back to Journal
@@ -49,14 +49,14 @@ export default function BlogPostPage() {
       </section>
 
       {/* Cover Image Placeholder */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-6">
-        <div className="aspect-[21/9] bg-cream border border-border rounded-lg flex items-center justify-center">
-          <p className="font-display text-warm-gray italic">Cover Image</p>
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 -mt-6">
+        <div className="aspect-[21/9] bg-cream border border-border rounded-xl overflow-hidden shadow-lg">
+          <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
         </div>
       </div>
 
       {/* Article */}
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <article className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         <div className="prose prose-lg max-w-none">
           <p className="text-lg text-warm-gray leading-relaxed mb-6">{post.excerpt}</p>
           <p className="text-warm-gray leading-relaxed mb-6">
@@ -109,14 +109,14 @@ export default function BlogPostPage() {
       {/* Related */}
       {relatedPosts.length > 0 && (
         <section className="bg-white py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <h2 className="font-display text-2xl text-center mb-10">Related Articles</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {relatedPosts.map((rp) => (
                 <Link key={rp.id} href={`/blog/${rp.slug}`} className="group">
                   <article>
-                    <div className="aspect-[16/10] bg-cream border border-border rounded-lg mb-4 flex items-center justify-center">
-                      <p className="font-display text-warm-gray italic text-sm">{rp.category}</p>
+                    <div className="aspect-[16/10] bg-cream border border-border rounded-lg mb-4 overflow-hidden">
+                      <img src={rp.coverImage} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                     </div>
                     <span className="text-xs uppercase tracking-wider text-gold">{rp.category}</span>
                     <h3 className="font-display text-lg mt-1 group-hover:text-gold transition-colors">{rp.title}</h3>

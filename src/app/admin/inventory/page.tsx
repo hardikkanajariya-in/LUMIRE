@@ -94,7 +94,9 @@ export default function AdminInventoryPage() {
                   <tr key={product.id} className="border-b border-gray-50 hover:bg-gray-50/50">
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded bg-cream border border-gray-100 shrink-0" />
+                        <div className="w-10 h-10 rounded bg-cream border border-gray-100 shrink-0 overflow-hidden">
+                          <img src={product.primaryImage} alt={product.name} className="w-full h-full object-cover" />
+                        </div>
                         <div className="min-w-0">
                           <p className="font-medium text-charcoal truncate max-w-[200px]">{product.name}</p>
                           <p className="text-xs text-warm-gray">{product.category}</p>

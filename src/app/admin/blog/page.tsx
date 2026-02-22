@@ -101,8 +101,12 @@ export default function AdminBlogPage() {
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
         {posts.map((post) => (
           <div key={post.id} className="flex items-center gap-4 p-4 border-b border-gray-100 last:border-0 hover:bg-gray-50/50">
-            <div className="w-16 h-12 rounded bg-cream border border-gray-100 shrink-0 flex items-center justify-center">
-              <span className="text-[10px] text-warm-gray">{post.category}</span>
+            <div className="w-16 h-12 rounded bg-cream border border-gray-100 shrink-0 overflow-hidden">
+              {post.coverImage ? (
+                <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-[10px] text-warm-gray flex items-center justify-center w-full h-full">{post.category}</span>
+              )}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5">

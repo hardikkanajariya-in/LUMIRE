@@ -12,12 +12,12 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-ivory">
       <section className="bg-charcoal text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <h1 className="font-display text-4xl font-light mb-2">Privacy Policy</h1>
           <p className="text-gray-400 text-sm">Last updated: January 1, 2025</p>
         </div>
       </section>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 flex gap-12">
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 py-12 flex gap-12">
         {/* Sidebar TOC */}
         <nav className="hidden lg:block w-56 shrink-0 sticky top-24 self-start">
           <p className="text-xs uppercase tracking-wider text-warm-gray mb-3">On this page</p>

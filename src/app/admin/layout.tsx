@@ -56,6 +56,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </div>
             <button type="submit" className="btn-primary w-full">Sign In</button>
           </form>
+          <p className="text-xs text-gray-600 text-center mt-6">
+            Built by{' '}
+            <a href="https://hardikkanajariya.in" target="_blank" rel="noopener noreferrer" className="text-gold/70 hover:text-gold transition-colors">hardikkanajariya.in</a>
+          </p>
         </div>
       </div>
     );
@@ -67,7 +71,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div className="fixed inset-0 bg-black/40 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
@@ -116,11 +120,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <LogOut size={18} />
             {!collapsed && <span>Sign Out</span>}
           </button>
+          {!collapsed && (
+            <p className="text-[10px] text-gray-600 mt-4 text-center">
+              Built by{' '}
+              <a href="https://hardikkanajariya.in" target="_blank" rel="noopener noreferrer" className="text-gold/60 hover:text-gold transition-colors">hardikkanajariya.in</a>
+            </p>
+          )}
         </div>
       </aside>
 
       {/* Main */}
-      <div className={`flex-1 transition-all duration-300 ${collapsed ? 'lg:ml-16' : 'lg:ml-60'}`}>
+      <div className={`min-h-screen transition-all duration-300 ${collapsed ? 'lg:ml-16' : 'lg:ml-60'}`}>
         {/* Top bar */}
         <header className="h-16 bg-white border-b border-gray-200 flex items-center px-4 lg:px-6 sticky top-0 z-30">
           <button onClick={() => setSidebarOpen(true)} className="lg:hidden mr-4">

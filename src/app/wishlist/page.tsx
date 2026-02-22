@@ -38,7 +38,7 @@ export default function WishlistPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="font-display text-3xl md:text-4xl font-light">Wishlist</h1>
@@ -66,13 +66,8 @@ export default function WishlistPage() {
               return (
                 <div key={product.id} className="bg-white border border-border hover:border-gold transition-all rounded-lg overflow-hidden group">
                   <Link href={`/products/${product.slug}`}>
-                    <div className="aspect-[3/4] bg-cream flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-border/50 flex items-center justify-center">
-                          <span className="text-warm-gray text-xs font-display">L</span>
-                        </div>
-                        <span className="text-xs text-warm-gray">{product.category}</span>
-                      </div>
+                    <div className="aspect-[3/4] bg-cream overflow-hidden">
+                      <img src={product.primaryImage} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                     </div>
                   </Link>
                   <div className="p-4">

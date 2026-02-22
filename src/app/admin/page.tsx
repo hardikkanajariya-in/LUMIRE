@@ -126,7 +126,9 @@ export default function AdminDashboard() {
             {topProducts.map((product, idx) => (
               <div key={product.id} className="flex items-center gap-3">
                 <span className="text-xs text-warm-gray w-5">{idx + 1}.</span>
-                <div className="w-9 h-9 rounded bg-cream border border-gray-100 shrink-0" />
+                <div className="w-9 h-9 rounded bg-cream border border-gray-100 shrink-0 overflow-hidden">
+                  <img src={product.primaryImage} alt={product.name} className="w-full h-full object-cover" />
+                </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-charcoal truncate">{product.name}</p>
                   <p className="text-xs text-warm-gray">{formatPrice(product.originalPrice)}</p>
@@ -191,7 +193,9 @@ export default function AdminDashboard() {
             <div className="space-y-3">
               {lowStockProducts.map((product) => (
                 <div key={product.id} className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
-                  <div className="w-9 h-9 rounded bg-white border border-orange-200 shrink-0" />
+                  <div className="w-9 h-9 rounded bg-white border border-orange-200 shrink-0 overflow-hidden">
+                    <img src={product.primaryImage} alt={product.name} className="w-full h-full object-cover" />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-charcoal truncate">{product.name}</p>
                     <p className="text-xs text-orange-600">{product.stock} left in stock</p>

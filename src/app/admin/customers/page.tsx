@@ -41,9 +41,9 @@ export default function AdminCustomersPage() {
         </select>
       </div>
 
-      <div className="flex gap-6">
+      <div className="flex gap-6 min-w-0">
         {/* Table */}
-        <div className={`bg-white rounded-lg border border-gray-200 overflow-hidden ${selected ? 'flex-1' : 'w-full'}`}>
+        <div className={`bg-white rounded-lg border border-gray-200 overflow-hidden min-w-0 ${selected ? 'flex-1' : 'w-full'}`}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-gray-50 border-b border-gray-200">

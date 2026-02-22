@@ -52,7 +52,7 @@ export default function AccountPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="font-display text-3xl font-light">My Account</h1>
@@ -109,8 +109,12 @@ export default function AccountPage() {
                         <div className="space-y-3">
                           {order.items.map((item, i) => (
                             <div key={i} className="flex items-center gap-3">
-                              <div className="w-12 h-14 bg-cream rounded flex-shrink-0 flex items-center justify-center">
-                                <span className="text-[10px] text-warm-gray">IMG</span>
+                              <div className="w-12 h-14 bg-cream rounded-lg flex-shrink-0 overflow-hidden">
+                                {item.productImage ? (
+                                  <img src={item.productImage} alt={item.productName} className="w-full h-full object-cover" />
+                                ) : (
+                                  <span className="text-[10px] text-warm-gray flex items-center justify-center w-full h-full">IMG</span>
+                                )}
                               </div>
                               <div className="flex-1 min-w-0">
                                 <p className="text-sm truncate">{item.productName}</p>

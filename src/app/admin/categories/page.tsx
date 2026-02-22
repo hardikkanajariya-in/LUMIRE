@@ -60,7 +60,7 @@ export default function AdminCategoriesPage() {
   }
 
   return (
-    <div className="space-y-6 max-w-3xl">
+    <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold text-charcoal">Categories</h1>
@@ -92,8 +92,12 @@ export default function AdminCategoriesPage() {
         {categoryList.map((cat) => (
           <div key={cat.id} className="flex items-center gap-4 p-4 border-b border-gray-100 last:border-0 hover:bg-gray-50/50">
             <GripVertical size={16} className="text-gray-300 shrink-0 cursor-grab" />
-            <div className="w-12 h-12 rounded bg-cream border border-gray-100 shrink-0 flex items-center justify-center">
-              <span className="text-xs text-warm-gray">{cat.name.charAt(0)}</span>
+            <div className="w-12 h-12 rounded bg-cream border border-gray-100 shrink-0 overflow-hidden">
+              {cat.coverImage ? (
+                <img src={cat.coverImage} alt={cat.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-xs text-warm-gray flex items-center justify-center w-full h-full">{cat.name.charAt(0)}</span>
+              )}
             </div>
 
             {editing === cat.id ? (

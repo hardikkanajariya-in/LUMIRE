@@ -46,7 +46,7 @@ export default function GiftCardsPage() {
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
       <section className="bg-charcoal text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
           <Gift className="mx-auto mb-4 text-gold" size={40} />
           <h1 className="font-display text-4xl md:text-5xl font-light mb-4">Gift Cards</h1>
           <p className="text-gray-400 max-w-lg mx-auto">
@@ -55,7 +55,7 @@ export default function GiftCardsPage() {
         </div>
       </section>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Amount Selection */}
           <div className="bg-white border border-border rounded-lg p-6">
