@@ -1,27 +1,27 @@
 export default function ReturnsPage() {
   return (
     <div className="min-h-screen bg-ivory">
-      <section className="bg-cream py-16 border-b border-border">
+      <section className="bg-cream py-12 sm:py-14 md:py-16 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl font-light mb-2 text-charcoal">Return & Refund Policy</h1>
+          <h1 className="font-display text-3xl sm:text-4xl font-light mb-2 text-charcoal">Return & Refund Policy</h1>
           <p className="text-warm-gray text-sm">Hassle-free returns, because your satisfaction matters.</p>
         </div>
       </section>
-      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
-        <div className="prose prose-sm max-w-none space-y-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12">
+        <div className="prose prose-sm max-w-none space-y-6 sm:space-y-8">
           {/* Highlights */}
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
-            <div className="bg-white border border-border rounded-lg p-5 text-center">
-              <p className="font-display text-2xl text-gold mb-1">30</p>
-              <p className="text-sm text-warm-gray">Day Return Window</p>
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
+            <div className="bg-white border border-border rounded-lg p-3 sm:p-4 md:p-5 text-center">
+              <p className="font-display text-xl sm:text-2xl text-gold mb-0.5 sm:mb-1">30</p>
+              <p className="text-xs sm:text-sm text-warm-gray">Day Return Window</p>
             </div>
-            <div className="bg-white border border-border rounded-lg p-5 text-center">
-              <p className="font-display text-2xl text-gold mb-1">Free</p>
-              <p className="text-sm text-warm-gray">Return Shipping</p>
+            <div className="bg-white border border-border rounded-lg p-3 sm:p-4 md:p-5 text-center">
+              <p className="font-display text-xl sm:text-2xl text-gold mb-0.5 sm:mb-1">Free</p>
+              <p className="text-xs sm:text-sm text-warm-gray">Return Shipping</p>
             </div>
-            <div className="bg-white border border-border rounded-lg p-5 text-center">
-              <p className="font-display text-2xl text-gold mb-1">7-10</p>
-              <p className="text-sm text-warm-gray">Days for Refund</p>
+            <div className="bg-white border border-border rounded-lg p-3 sm:p-4 md:p-5 text-center">
+              <p className="font-display text-xl sm:text-2xl text-gold mb-0.5 sm:mb-1">7-10</p>
+              <p className="text-xs sm:text-sm text-warm-gray">Days for Refund</p>
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export default function ReturnsPage() {
             </p>
           </section>
 
-          <div className="text-center p-6 bg-cream rounded-lg border border-border mt-8">
+          <div className="text-center p-4 sm:p-5 md:p-6 bg-cream rounded-lg border border-border mt-6 sm:mt-8">
             <p className="text-sm text-warm-gray mb-3">Need help with a return?</p>
             <a href="/contact" className="btn-primary inline-block">Contact Customer Care</a>
           </div>

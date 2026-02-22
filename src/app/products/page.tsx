@@ -168,11 +168,11 @@ function ProductsContent() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Breadcrumb */}
-      <div className="page-container pt-6">
-        <div className="flex items-center gap-2 text-xs text-warm-gray">
-          <Link href="/" className="hover:text-gold transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-charcoal">Collections</span>
+      <div className="page-container pt-4 sm:pt-6">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-warm-gray overflow-x-auto">
+          <Link href="/" className="hover:text-gold transition-colors shrink-0">Home</Link>
+          <span className="shrink-0">/</span>
+          <span className="text-charcoal shrink-0">Collections</span>
           {selectedCategory && (
             <>
               <span>/</span>
@@ -183,21 +183,21 @@ function ProductsContent() {
       </div>
 
       {/* Title */}
-      <div className="page-container py-8 sm:py-10">
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light">
+      <div className="page-container py-5 sm:py-8 md:py-10">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light">
           {selectedCategory ? categories.find((c) => c.slug === selectedCategory)?.name || 'Collections' : 'All Collections'}
         </h1>
-        <p className="text-sm text-warm-gray mt-2">{filtered.length} pieces</p>
+        <p className="text-xs sm:text-sm text-warm-gray mt-1.5 sm:mt-2">{filtered.length} pieces</p>
       </div>
 
-      <div className="page-container pb-20">
+      <div className="page-container pb-12 sm:pb-16 md:pb-20">
         {/* Mobile Filter Button */}
-        <div className="lg:hidden flex items-center justify-between mb-6">
-          <button onClick={() => setMobileFiltersOpen(true)} className="flex items-center gap-2 text-sm border border-border rounded-full px-4 py-2.5 hover:border-gold transition-colors">
-            <SlidersHorizontal size={16} /> Filters
+        <div className="lg:hidden flex items-center justify-between mb-4 sm:mb-6 gap-3">
+          <button onClick={() => setMobileFiltersOpen(true)} className="flex items-center gap-2 text-xs sm:text-sm border border-border rounded-full px-3.5 sm:px-4 py-2 sm:py-2.5 hover:border-gold active:bg-cream transition-colors">
+            <SlidersHorizontal size={15} /> Filters
           </button>
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="text-sm border border-border rounded-full px-4 py-2.5 bg-white outline-none">
+            className="text-xs sm:text-sm border border-border rounded-full px-3 sm:px-4 py-2 sm:py-2.5 bg-white outline-none min-w-0">
             <option value="newest">Newest</option>
             <option value="price-low">Price: Low–High</option>
             <option value="price-high">Price: High–Low</option>
@@ -208,7 +208,7 @@ function ProductsContent() {
 
         {/* Active Filter Chips */}
         {activeFilters.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
             {activeFilters.map((f, i) => (
               <span key={i} className="flex items-center gap-1.5 px-3 py-1.5 bg-cream border border-border rounded-full text-xs font-medium">
                 {f.label}
@@ -218,7 +218,7 @@ function ProductsContent() {
           </div>
         )}
 
-        <div className="flex gap-10">
+        <div className="flex gap-6 lg:gap-10">
           {/* Desktop Sidebar */}
           <aside className="hidden lg:block w-60 flex-shrink-0 sticky top-24 self-start">
             <div className="flex items-center justify-between mb-6">
@@ -236,15 +236,15 @@ function ProductsContent() {
           </aside>
 
           {/* Product Grid */}
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             {filtered.length === 0 ? (
-              <div className="text-center py-20">
-                <p className="font-display text-2xl text-warm-gray mb-3">No pieces found</p>
-                <p className="text-sm text-warm-gray mb-6">Try adjusting your filters or explore our full collection.</p>
+              <div className="text-center py-12 sm:py-20">
+                <p className="font-display text-xl sm:text-2xl text-warm-gray mb-3">No pieces found</p>
+                <p className="text-xs sm:text-sm text-warm-gray mb-6">Try adjusting your filters or explore our full collection.</p>
                 <button onClick={clearAll} className="btn-primary">Clear Filters</button>
               </div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -258,12 +258,12 @@ function ProductsContent() {
       {mobileFiltersOpen && (
         <>
           <div className="fixed inset-0 bg-black/40 z-50 lg:hidden" onClick={() => setMobileFiltersOpen(false)} />
-          <div className="fixed bottom-0 left-0 right-0 bg-white z-50 lg:hidden rounded-t-2xl max-h-[80vh] overflow-y-auto">
-            <div className="flex items-center justify-between p-5 border-b border-border sticky top-0 bg-white rounded-t-2xl">
+          <div className="fixed bottom-0 left-0 right-0 bg-white z-50 lg:hidden rounded-t-2xl max-h-[85vh] overflow-y-auto">
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-border sticky top-0 bg-white rounded-t-2xl z-10">
               <h2 className="font-display text-lg">Filters</h2>
-              <button onClick={() => setMobileFiltersOpen(false)} aria-label="Close filters"><X size={20} /></button>
+              <button onClick={() => setMobileFiltersOpen(false)} className="p-2 -mr-2 rounded-lg hover:bg-cream active:bg-cream-dark transition-colors" aria-label="Close filters"><X size={20} /></button>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
               <FilterContent />
               <button onClick={() => setMobileFiltersOpen(false)} className="btn-primary w-full mt-6">
                 Show {filtered.length} Results

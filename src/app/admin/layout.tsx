@@ -163,15 +163,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main content area */}
       <div className="flex-1 flex flex-col overflow-hidden min-w-0">
         {/* Top bar */}
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center px-4 lg:px-6 shrink-0 z-30">
-          <button onClick={() => setSidebarOpen(true)} className="lg:hidden mr-4">
+        <header className="h-14 sm:h-16 bg-white border-b border-gray-200 flex items-center px-4 lg:px-6 shrink-0 z-30">
+          <button onClick={() => setSidebarOpen(true)} className="lg:hidden mr-3 sm:mr-4 p-1.5 -ml-1.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors" aria-label="Open sidebar">
             <Menu size={22} />
           </button>
           <div className="flex-1" />
           <span className="text-sm text-warm-gray">Admin</span>
         </header>
         {/* Scrollable content */}
-        <main className="flex-1 overflow-y-auto p-4 lg:p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto p-3 sm:p-4 lg:p-6">{children}</main>
       </div>
     </div>
   );

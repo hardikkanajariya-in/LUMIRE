@@ -113,12 +113,12 @@ function AccordionItem({ item, isOpen, onToggle }: { item: FaqItem; isOpen: bool
   return (
     <div className="border-b border-border last:border-0">
       <button onClick={onToggle}
-        className="w-full flex items-center justify-between py-4 text-left hover:text-gold transition-colors">
-        <span className="text-sm font-medium pr-4">{item.question}</span>
-        <ChevronDown size={18} className={`shrink-0 text-warm-gray transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        className="w-full flex items-center justify-between py-3.5 sm:py-4 text-left hover:text-gold transition-colors">
+        <span className="text-xs sm:text-sm font-medium pr-4">{item.question}</span>
+        <ChevronDown size={16} className={`shrink-0 text-warm-gray transition-transform sm:w-[18px] sm:h-[18px] ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      <div className={`overflow-hidden transition-all ${isOpen ? 'max-h-60 pb-4' : 'max-h-0'}`}>
-        <p className="text-sm text-warm-gray leading-relaxed">{item.answer}</p>
+      <div className={`overflow-hidden transition-all ${isOpen ? 'max-h-60 pb-3.5 sm:pb-4' : 'max-h-0'}`}>
+        <p className="text-xs sm:text-sm text-warm-gray leading-relaxed">{item.answer}</p>
       </div>
     </div>
   );
@@ -137,19 +137,19 @@ export default function FaqPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-cream py-20 border-b border-border">
+      <section className="bg-cream py-14 sm:py-16 md:py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">Frequently Asked Questions</h1>
-          <p className="text-warm-gray">Everything you need to know about shopping with Lumière.</p>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light mb-3 sm:mb-4 text-charcoal">Frequently Asked Questions</h1>
+          <p className="text-sm sm:text-base text-warm-gray">Everything you need to know about shopping with Lumière.</p>
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12">
         {/* Category Tabs */}
-        <div className="flex overflow-x-auto gap-2 mb-8 pb-2 no-scrollbar">
+        <div className="flex overflow-x-auto gap-1.5 sm:gap-2 mb-6 sm:mb-8 pb-2 no-scrollbar">
           {FAQ_DATA.map((cat) => (
             <button key={cat.name} onClick={() => setActiveCategory(cat.name)}
-              className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-all ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm whitespace-nowrap transition-all ${
                 activeCategory === cat.name ? 'bg-gold text-white' : 'border border-border text-warm-gray hover:border-gold'
               }`}>
               {cat.name}
@@ -159,8 +159,8 @@ export default function FaqPage() {
 
         {/* Questions */}
         {activeCategoryData && (
-          <div className="bg-white border border-border rounded-lg p-6">
-            <h2 className="font-display text-xl mb-4">{activeCategoryData.name}</h2>
+          <div className="bg-white border border-border rounded-lg p-4 sm:p-5 md:p-6">
+            <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">{activeCategoryData.name}</h2>
             {activeCategoryData.items.map((item, idx) => {
               const key = `${activeCategoryData.name}-${idx}`;
               return (
@@ -172,8 +172,8 @@ export default function FaqPage() {
         )}
 
         {/* Contact CTA */}
-        <div className="text-center mt-12 p-8 bg-cream rounded-lg border border-border">
-          <h3 className="font-display text-xl mb-2">Still have questions?</h3>
+        <div className="text-center mt-8 sm:mt-10 md:mt-12 p-5 sm:p-6 md:p-8 bg-cream rounded-lg border border-border">
+          <h3 className="font-display text-lg sm:text-xl mb-2">Still have questions?</h3>
           <p className="text-sm text-warm-gray mb-4">
             Our customer care team is here to help.
           </p>

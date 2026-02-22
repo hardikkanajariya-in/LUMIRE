@@ -30,15 +30,15 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-cream py-20 border-b border-border">
+      <section className="bg-cream py-12 sm:py-16 md:py-20 border-b border-border">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-warm-gray hover:text-gold mb-6 transition-colors">
-            <ArrowLeft size={16} />
+          <Link href="/blog" className="inline-flex items-center gap-2 text-xs sm:text-sm text-warm-gray hover:text-gold mb-4 sm:mb-6 transition-colors">
+            <ArrowLeft size={14} className="sm:w-4 sm:h-4" />
             Back to Journal
           </Link>
-          <span className="block text-xs uppercase tracking-wider text-gold-dark mb-4">{post.category}</span>
-          <h1 className="font-display text-3xl md:text-5xl font-light mb-4 leading-tight text-charcoal">{post.title}</h1>
-          <div className="flex items-center justify-center gap-4 text-sm text-warm-gray">
+          <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-gold-dark mb-3 sm:mb-4">{post.category}</span>
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-3 sm:mb-4 leading-tight text-charcoal">{post.title}</h1>
+          <div className="flex items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-warm-gray flex-wrap">
             <span>{post.author}</span>
             <span>·</span>
             <span>{formatDate(post.publishedAt)}</span>
@@ -49,32 +49,32 @@ export default function BlogPostPage() {
       </section>
 
       {/* Cover Image Placeholder */}
-      <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 -mt-6">
-        <div className="aspect-[21/9] bg-cream border border-border rounded-xl overflow-hidden shadow-lg">
+      <div className="max-w-4xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12 -mt-4 sm:-mt-6">
+        <div className="aspect-[16/9] sm:aspect-[21/9] bg-cream border border-border rounded-lg sm:rounded-xl overflow-hidden shadow-lg">
           <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
         </div>
       </div>
 
       {/* Article */}
-      <article className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
-        <div className="prose prose-lg max-w-none">
-          <p className="text-lg text-warm-gray leading-relaxed mb-6">{post.excerpt}</p>
+      <article className="max-w-3xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12">
+        <div className="prose prose-sm sm:prose-lg max-w-none">
+          <p className="text-base sm:text-lg text-warm-gray leading-relaxed mb-4 sm:mb-6">{post.excerpt}</p>
           <p className="text-warm-gray leading-relaxed mb-6">
             Jewelry has been an integral part of human civilization for thousands of years. From the earliest
             beaded necklaces found in ancient caves to the meticulously designed pieces of today, our desire to
             adorn ourselves with beautiful objects speaks to something fundamental in human nature.
           </p>
-          <h2 className="font-display text-2xl text-charcoal mt-10 mb-4">The Art of Selection</h2>
+          <h2 className="font-display text-xl sm:text-2xl text-charcoal mt-8 sm:mt-10 mb-3 sm:mb-4">The Art of Selection</h2>
           <p className="text-warm-gray leading-relaxed mb-6">
             Choosing the right piece of jewelry is both an art and a science. It involves understanding personal
             style, the occasion, and the subtle interplay between metals and gemstones. At Lumière, we believe
             every piece tells a story — your story.
           </p>
-          <blockquote className="border-l-2 border-gold pl-6 italic text-charcoal my-8 text-lg">
+          <blockquote className="border-l-2 border-gold pl-4 sm:pl-6 italic text-charcoal my-6 sm:my-8 text-base sm:text-lg">
             &ldquo;Jewelry is a way of keeping memories close. Each piece holds a moment in time, a feeling, a
             connection that transcends the physical.&rdquo;
           </blockquote>
-          <h2 className="font-display text-2xl text-charcoal mt-10 mb-4">Expert Insights</h2>
+          <h2 className="font-display text-xl sm:text-2xl text-charcoal mt-8 sm:mt-10 mb-3 sm:mb-4">Expert Insights</h2>
           <p className="text-warm-gray leading-relaxed mb-6">
             Our master jewelers bring decades of experience to every creation. The interplay of light through a
             perfectly cut diamond, the warm glow of 22-karat gold, the subtle blush of rose gold — these details
@@ -108,10 +108,10 @@ export default function BlogPostPage() {
 
       {/* Related */}
       {relatedPosts.length > 0 && (
-        <section className="bg-white py-16 border-t border-border">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-            <h2 className="font-display text-2xl text-center mb-10">Related Articles</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+        <section className="bg-white py-10 sm:py-12 md:py-16 border-t border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12">
+            <h2 className="font-display text-xl sm:text-2xl text-center mb-6 sm:mb-8 md:mb-10">Related Articles</h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {relatedPosts.map((rp) => (
                 <Link key={rp.id} href={`/blog/${rp.slug}`} className="group">
                   <article>

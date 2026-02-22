@@ -61,11 +61,11 @@ export default function ProductDetailPage() {
   const AccordionItem = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
     <div className="border-b border-border">
       <button onClick={() => setOpenAccordion(openAccordion === id ? null : id)}
-        className="flex items-center justify-between w-full py-4 text-sm font-medium">
+        className="flex items-center justify-between w-full py-3.5 sm:py-4 text-xs sm:text-sm font-medium">
         {title}
         {openAccordion === id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
       </button>
-      {openAccordion === id && <div className="pb-4 text-sm text-warm-gray leading-relaxed">{children}</div>}
+      {openAccordion === id && <div className="pb-3.5 sm:pb-4 text-xs sm:text-sm text-warm-gray leading-relaxed">{children}</div>}
     </div>
   );
 
@@ -80,31 +80,31 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Breadcrumb */}
-      <div className="page-container pt-6 pb-4">
-        <div className="flex items-center gap-2 text-xs text-warm-gray">
-          <Link href="/" className="hover:text-gold transition-colors">Home</Link>
-          <span>/</span>
-          <Link href="/products" className="hover:text-gold transition-colors">Collections</Link>
-          <span>/</span>
-          <Link href={`/products?category=${product.categorySlug}`} className="hover:text-gold transition-colors">{product.category}</Link>
-          <span>/</span>
+      <div className="page-container pt-4 sm:pt-6 pb-3 sm:pb-4">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-warm-gray overflow-x-auto">
+          <Link href="/" className="hover:text-gold transition-colors shrink-0">Home</Link>
+          <span className="shrink-0">/</span>
+          <Link href="/products" className="hover:text-gold transition-colors shrink-0">Collections</Link>
+          <span className="shrink-0">/</span>
+          <Link href={`/products?category=${product.categorySlug}`} className="hover:text-gold transition-colors shrink-0">{product.category}</Link>
+          <span className="shrink-0">/</span>
           <span className="text-charcoal truncate">{product.name}</span>
         </div>
       </div>
 
       {/* Product Section */}
-      <div className="page-container pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+      <div className="page-container pb-12 sm:pb-16 md:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
           {/* Images */}
           <div>
-            <div className="aspect-[3/4] bg-cream rounded-xl overflow-hidden mb-4">
+            <div className="aspect-[3/4] bg-cream rounded-lg sm:rounded-xl overflow-hidden mb-3 sm:mb-4">
               <img
                 src={product.images[selectedImage] || product.primaryImage}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-4 gap-2 sm:gap-3">
               {product.images.slice(0, 4).map((img, i) => (
                 <button key={i} onClick={() => setSelectedImage(i)}
                   className={`aspect-square rounded-lg overflow-hidden border-2 transition-colors ${selectedImage === i ? 'border-gold' : 'border-transparent hover:border-border'}`}>
@@ -125,10 +125,10 @@ export default function ProductDetailPage() {
               <span className="text-xs text-warm-gray">({productReviews.length} reviews)</span>
             </div>
 
-            <h1 className="font-display text-3xl lg:text-4xl font-light mb-4">{product.name}</h1>
+            <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-light mb-3 sm:mb-4">{product.name}</h1>
 
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl font-display font-semibold text-gold">{formatPrice(currentPrice)}</span>
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap">
+              <span className="text-xl sm:text-2xl font-display font-semibold text-gold">{formatPrice(currentPrice)}</span>
               {product.salePrice && (
                 <>
                   <span className="text-lg text-warm-gray line-through">{formatPrice(product.originalPrice)}</span>
@@ -137,15 +137,15 @@ export default function ProductDetailPage() {
               )}
             </div>
 
-            <p className="text-sm text-warm-gray leading-relaxed mb-6">{product.shortDescription}</p>
+            <p className="text-xs sm:text-sm text-warm-gray leading-relaxed mb-4 sm:mb-6">{product.shortDescription}</p>
 
             {/* Metal Type */}
-            <div className="mb-6">
-              <label className="text-xs uppercase tracking-wider font-medium mb-3 block">Metal Type</label>
+            <div className="mb-4 sm:mb-6">
+              <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-2 sm:mb-3 block">Metal Type</label>
               <div className="flex flex-wrap gap-2">
                 {product.metalType.map((metal) => (
                   <button key={metal} onClick={() => setSelectedMetal(metal)}
-                    className={`px-4 py-2.5 rounded-full text-sm border transition-all ${selectedMetal === metal ? 'border-gold bg-gold/10 text-gold' : 'border-border text-warm-gray hover:border-gold'}`}>
+                    className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm border transition-all ${selectedMetal === metal ? 'border-gold bg-gold/10 text-gold' : 'border-border text-warm-gray hover:border-gold'}`}>
                     {getMetalLabel(metal)}
                   </button>
                 ))}
@@ -154,15 +154,15 @@ export default function ProductDetailPage() {
 
             {/* Ring Size */}
             {product.ringSizes.length > 0 && (
-              <div className="mb-6">
-                <div className="flex items-center justify-between mb-3">
-                  <label className="text-xs uppercase tracking-wider font-medium">Ring Size</label>
+              <div className="mb-4 sm:mb-6">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium">Ring Size</label>
                   <button className="text-xs text-gold hover:underline">Size Guide</button>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {product.ringSizes.map((size) => (
                     <button key={size} onClick={() => setSelectedSize(size)}
-                      className={`w-10 h-10 rounded-full text-sm border transition-all flex items-center justify-center ${selectedSize === size ? 'border-gold bg-gold/10 text-gold' : 'border-border text-warm-gray hover:border-gold'}`}>
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full text-xs sm:text-sm border transition-all flex items-center justify-center ${selectedSize === size ? 'border-gold bg-gold/10 text-gold' : 'border-border text-warm-gray hover:border-gold'}`}>
                       {size}
                     </button>
                   ))}
@@ -171,8 +171,8 @@ export default function ProductDetailPage() {
             )}
 
             {/* Quantity */}
-            <div className="mb-8">
-              <label className="text-xs uppercase tracking-wider font-medium mb-3 block">Quantity</label>
+            <div className="mb-6 sm:mb-8">
+              <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-2 sm:mb-3 block">Quantity</label>
               <div className="flex items-center border border-border rounded-full w-fit">
                 <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="p-3 hover:text-gold transition-colors" aria-label="Decrease quantity"><Minus size={16} /></button>
                 <span className="w-10 text-center text-sm">{quantity}</span>
@@ -181,17 +181,17 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Actions */}
-            <div className="flex gap-3 mb-6">
-              <button onClick={handleAddToCart} className="btn-primary flex-1">Add to Cart</button>
+            <div className="flex gap-2.5 sm:gap-3 mb-5 sm:mb-6">
+              <button onClick={handleAddToCart} className="btn-primary flex-1 text-sm sm:text-base">Add to Cart</button>
               <button onClick={toggleWishlist}
-                className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all ${wishlisted ? 'border-rose bg-rose/10' : 'border-border hover:border-gold'}`}
+                className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full border flex items-center justify-center transition-all shrink-0 ${wishlisted ? 'border-rose bg-rose/10' : 'border-border hover:border-gold'}`}
                 aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}>
                 <Heart size={20} className={wishlisted ? 'fill-rose text-rose' : 'text-warm-gray'} />
               </button>
             </div>
 
             {/* Benefits */}
-            <div className="grid grid-cols-3 gap-4 py-6 border-y border-border mb-6">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-6 border-y border-border mb-4 sm:mb-6">
               <div className="text-center">
                 <Truck size={20} className="mx-auto text-gold mb-1.5" />
                 <p className="text-[11px] text-warm-gray">Free Shipping<br />over ₹5,000</p>
@@ -224,20 +224,20 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Reviews & Related */}
-        <div className="mt-20">
-          <div className="flex gap-8 border-b border-border mb-8">
+        <div className="mt-10 sm:mt-14 md:mt-20">
+          <div className="flex gap-4 sm:gap-8 border-b border-border mb-6 sm:mb-8 overflow-x-auto">
             <button onClick={() => setActiveTab('reviews')}
-              className={`pb-3 text-sm uppercase tracking-wider font-medium transition-colors border-b-2 ${activeTab === 'reviews' ? 'border-gold text-charcoal' : 'border-transparent text-warm-gray hover:text-charcoal'}`}>
+              className={`pb-2.5 sm:pb-3 text-xs sm:text-sm uppercase tracking-wider font-medium transition-colors border-b-2 whitespace-nowrap ${activeTab === 'reviews' ? 'border-gold text-charcoal' : 'border-transparent text-warm-gray hover:text-charcoal'}`}>
               Reviews ({productReviews.length})
             </button>
             <button onClick={() => setActiveTab('related')}
-              className={`pb-3 text-sm uppercase tracking-wider font-medium transition-colors border-b-2 ${activeTab === 'related' ? 'border-gold text-charcoal' : 'border-transparent text-warm-gray hover:text-charcoal'}`}>
+              className={`pb-2.5 sm:pb-3 text-xs sm:text-sm uppercase tracking-wider font-medium transition-colors border-b-2 whitespace-nowrap ${activeTab === 'related' ? 'border-gold text-charcoal' : 'border-transparent text-warm-gray hover:text-charcoal'}`}>
               You May Also Like
             </button>
           </div>
 
           {activeTab === 'reviews' && (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
               <div>
                 <div className="text-center md:text-left mb-6">
                   <p className="font-display text-5xl font-light text-gold">{product.rating}</p>
@@ -291,7 +291,7 @@ export default function ProductDetailPage() {
           )}
 
           {activeTab === 'related' && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {relatedProducts.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}

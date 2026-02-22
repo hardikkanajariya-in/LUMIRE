@@ -19,34 +19,34 @@ export default function CustomOrdersPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-cream py-24 border-b border-border">
+      <section className="bg-cream py-14 sm:py-20 md:py-24 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Custom</span>
-          <h1 className="font-display text-4xl md:text-6xl font-light mb-6 text-charcoal">Bespoke Creations</h1>
-          <div className="gold-line mb-5" />
-          <p className="text-base sm:text-lg text-warm-gray max-w-2xl mx-auto">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Custom</span>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-4 sm:mb-6 text-charcoal">Bespoke Creations</h1>
+          <div className="gold-line mb-4 sm:mb-5" />
+          <p className="text-sm sm:text-base md:text-lg text-warm-gray max-w-2xl mx-auto">
             Your most meaningful moments deserve one-of-a-kind jewelry. Let us craft something extraordinary, just for you.
           </p>
         </div>
       </section>
 
       {/* Process Steps */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="page-container">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl font-light">The Bespoke Process</h2>
+          <div className="text-center mb-8 sm:mb-10 md:mb-14">
+            <h2 className="font-display text-2xl sm:text-3xl font-light">The Bespoke Process</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {steps.map((step, i) => (
               <div key={i} className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
-                  <step.icon size={24} className="text-gold" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+                  <step.icon size={20} className="text-gold sm:w-6 sm:h-6" />
                 </div>
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-xs text-gold font-medium">Step {i + 1}</span>
+                <div className="flex items-center justify-center gap-2 mb-1.5 sm:mb-2">
+                  <span className="text-[11px] sm:text-xs text-gold font-medium">Step {i + 1}</span>
                 </div>
-                <h3 className="font-display text-lg mb-2">{step.title}</h3>
-                <p className="text-sm text-warm-gray leading-relaxed">{step.desc}</p>
+                <h3 className="font-display text-sm sm:text-base md:text-lg mb-1.5 sm:mb-2">{step.title}</h3>
+                <p className="text-xs sm:text-sm text-warm-gray leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -54,23 +54,23 @@ export default function CustomOrdersPage() {
       </section>
 
       {/* Custom Request Form */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-2xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-10">
-            <h2 className="font-display text-3xl font-light mb-3">Start Your Custom Order</h2>
+      <section className="py-12 sm:py-16 md:py-20 bg-cream">
+        <div className="max-w-2xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
+            <h2 className="font-display text-2xl sm:text-3xl font-light mb-2 sm:mb-3">Start Your Custom Order</h2>
             <p className="text-sm text-warm-gray">Tell us about your dream piece and we&apos;ll bring it to life.</p>
           </div>
 
           {submitted ? (
-            <div className="bg-white rounded-lg border border-border p-8 text-center">
-              <Sparkles size={32} className="text-gold mx-auto mb-4" />
-              <h3 className="font-display text-2xl mb-2">Request Received!</h3>
+            <div className="bg-white rounded-lg border border-border p-5 sm:p-6 md:p-8 text-center">
+              <Sparkles size={28} className="text-gold mx-auto mb-3 sm:mb-4 sm:w-8 sm:h-8" />
+              <h3 className="font-display text-xl sm:text-2xl mb-2">Request Received!</h3>
               <p className="text-sm text-warm-gray">Our design team will reach out within 48 hours to begin your journey.</p>
             </div>
           ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="bg-white rounded-lg border border-border p-8 space-y-4">
+            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="bg-white rounded-lg border border-border p-4 sm:p-6 md:p-8 space-y-3 sm:space-y-4">
               <div>
-                <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Type of Piece</label>
+                <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Type of Piece</label>
                 <select value={form.pieceType} onChange={(e) => setForm({ ...form, pieceType: e.target.value })} className="input-luxury" required>
                   <option value="">Select a type</option>
                   <option value="ring">Ring</option>
@@ -81,9 +81,9 @@ export default function CustomOrdersPage() {
                   <option value="other">Other</option>
                 </select>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Preferred Metal</label>
+                  <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Preferred Metal</label>
                   <select value={form.metal} onChange={(e) => setForm({ ...form, metal: e.target.value })} className="input-luxury">
                     <option value="">Select</option>
                     <option value="gold-18k">Gold 18K</option>
@@ -93,7 +93,7 @@ export default function CustomOrdersPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Stone Preference</label>
+                  <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Stone Preference</label>
                   <select value={form.stone} onChange={(e) => setForm({ ...form, stone: e.target.value })} className="input-luxury">
                     <option value="">Select</option>
                     <option value="diamond">Diamond</option>
@@ -105,9 +105,9 @@ export default function CustomOrdersPage() {
                   </select>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Budget Range</label>
+                  <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Budget Range</label>
                   <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="input-luxury">
                     <option value="">Select</option>
                     <option value="under-25k">Under ₹25,000</option>
@@ -118,7 +118,7 @@ export default function CustomOrdersPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Occasion</label>
+                  <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Occasion</label>
                   <select value={form.occasion} onChange={(e) => setForm({ ...form, occasion: e.target.value })} className="input-luxury">
                     <option value="">Select</option>
                     <option value="engagement">Engagement</option>
@@ -131,17 +131,17 @@ export default function CustomOrdersPage() {
                 </div>
               </div>
               <div>
-                <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Desired Deadline</label>
+                <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Desired Deadline</label>
                 <input type="date" value={form.deadline} onChange={(e) => setForm({ ...form, deadline: e.target.value })} className="input-luxury" />
               </div>
               <div>
-                <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Describe Your Vision</label>
+                <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Describe Your Vision</label>
                 <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}
                   placeholder="Tell us about your dream piece — style inspiration, specific details, reference images you love..." rows={5} className="input-luxury resize-none" required />
               </div>
               <div>
-                <label className="text-xs uppercase tracking-wider font-medium mb-2 block">Reference Image (optional)</label>
-                <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-gold transition-colors cursor-pointer">
+                <label className="text-[11px] sm:text-xs uppercase tracking-wider font-medium mb-1.5 sm:mb-2 block">Reference Image (optional)</label>
+                <div className="border-2 border-dashed border-border rounded-lg p-5 sm:p-6 md:p-8 text-center hover:border-gold transition-colors cursor-pointer">
                   <p className="text-sm text-warm-gray">Drag & drop or click to upload</p>
                   <p className="text-xs text-warm-gray mt-1">PNG, JPG up to 10MB</p>
                 </div>

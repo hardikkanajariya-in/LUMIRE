@@ -45,22 +45,22 @@ export default function GiftCardsPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-cream py-20 border-b border-border">
+      <section className="bg-cream py-14 sm:py-16 md:py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <Gift className="mx-auto mb-4 text-gold" size={40} />
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">Gift Cards</h1>
-          <p className="text-warm-gray max-w-lg mx-auto">
+          <Gift className="mx-auto mb-3 sm:mb-4 text-gold" size={32} />
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light mb-3 sm:mb-4 text-charcoal">Gift Cards</h1>
+          <p className="text-sm sm:text-base text-warm-gray max-w-lg mx-auto">
             Give the gift of choice. A Lumière gift card lets your loved ones pick the jewelry that speaks to them.
           </p>
         </div>
       </section>
 
-      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 py-12">
-        <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12">
+        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 md:space-y-8">
           {/* Amount Selection */}
-          <div className="bg-white border border-border rounded-lg p-6">
-            <h2 className="font-display text-xl mb-4">Select Amount</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+          <div className="bg-white border border-border rounded-lg p-4 sm:p-5 md:p-6">
+            <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">Select Amount</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-3 sm:mb-4">
               {AMOUNTS.map((amt) => (
                 <button key={amt} type="button"
                   onClick={() => { setSelectedAmount(amt); setUseCustom(false); }}
@@ -91,9 +91,9 @@ export default function GiftCardsPage() {
           </div>
 
           {/* Recipient Details */}
-          <div className="bg-white border border-border rounded-lg p-6">
-            <h2 className="font-display text-xl mb-4">Recipient Details</h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
+          <div className="bg-white border border-border rounded-lg p-4 sm:p-5 md:p-6">
+            <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">Recipient Details</h2>
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div>
                 <label className="block text-sm text-warm-gray mb-1">Recipient Name</label>
                 <input type="text" required value={recipientName}
@@ -123,12 +123,12 @@ export default function GiftCardsPage() {
           </div>
 
           {/* Preview Card */}
-          <div className="bg-gradient-to-br from-cream to-cream-dark rounded-lg p-8 relative overflow-hidden border border-border">
+          <div className="bg-gradient-to-br from-cream to-cream-dark rounded-lg p-5 sm:p-6 md:p-8 relative overflow-hidden border border-border">
             <div className="absolute top-0 right-0 w-40 h-40 bg-gold/10 rounded-full -mr-16 -mt-16" />
             <div className="relative">
-              <p className="font-display text-2xl text-gold-dark mb-1">Lumière</p>
-              <p className="text-sm text-warm-gray mb-6">Gift Card</p>
-              <p className="font-display text-4xl mb-4 text-charcoal">{formatPrice(finalAmount)}</p>
+              <p className="font-display text-xl sm:text-2xl text-gold-dark mb-1">Lumière</p>
+              <p className="text-xs sm:text-sm text-warm-gray mb-4 sm:mb-6">Gift Card</p>
+              <p className="font-display text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 text-charcoal">{formatPrice(finalAmount)}</p>
               {recipientName && <p className="text-sm text-charcoal">To: {recipientName}</p>}
               {senderName && <p className="text-sm text-warm-gray">From: {senderName}</p>}
               {message && <p className="text-sm italic text-warm-gray mt-3">&ldquo;{message}&rdquo;</p>}
@@ -137,10 +137,10 @@ export default function GiftCardsPage() {
           </div>
 
           {/* Submit */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-sm text-warm-gray">Total</p>
-              <p className="font-display text-2xl">{formatPrice(finalAmount)}</p>
+              <p className="text-xs sm:text-sm text-warm-gray">Total</p>
+              <p className="font-display text-xl sm:text-2xl">{formatPrice(finalAmount)}</p>
             </div>
             <button type="submit" disabled={finalAmount < 100}
               className="btn-primary px-8 py-3 disabled:opacity-50 disabled:pointer-events-none">

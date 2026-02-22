@@ -34,25 +34,25 @@ function SearchContent() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <div className="page-container py-12">
-        <h1 className="font-display text-3xl md:text-4xl font-light mb-6">Search Results</h1>
-        <div className="mb-8">
+      <div className="page-container py-8 sm:py-10 md:py-12">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-light mb-4 sm:mb-6">Search Results</h1>
+        <div className="mb-6 sm:mb-8">
           <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search for jewelry..."
-            className="input-luxury max-w-xl text-lg py-3" autoFocus />
+            className="input-luxury max-w-xl text-base sm:text-lg py-2.5 sm:py-3" autoFocus />
         </div>
         {query.length >= 2 && (
-          <p className="text-sm text-warm-gray mb-6">{results.length} result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;</p>
+          <p className="text-xs sm:text-sm text-warm-gray mb-4 sm:mb-6">{results.length} result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;</p>
         )}
         {results.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {results.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : query.length >= 2 ? (
-          <div className="text-center py-16">
-            <p className="font-display text-2xl text-warm-gray mb-3">No results found</p>
-            <p className="text-sm text-warm-gray mb-6">Try a different search term or browse our collections.</p>
+          <div className="text-center py-10 sm:py-16">
+            <p className="font-display text-xl sm:text-2xl text-warm-gray mb-3">No results found</p>
+            <p className="text-xs sm:text-sm text-warm-gray mb-5 sm:mb-6">Try a different search term or browse our collections.</p>
             <Link href="/products" className="btn-primary">Browse All</Link>
           </div>
         ) : null}

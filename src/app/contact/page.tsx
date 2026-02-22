@@ -14,25 +14,25 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <section className="bg-cream py-20 border-b border-border">
+      <section className="bg-cream py-14 sm:py-16 md:py-20 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-light mb-4 text-charcoal">Get in Touch</h1>
-          <p className="text-warm-gray">We&apos;d love to hear from you. Reach out for inquiries, custom orders, or just to say hello.</p>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light mb-3 sm:mb-4 text-charcoal">Get in Touch</h1>
+          <p className="text-sm sm:text-base text-warm-gray">We&apos;d love to hear from you. Reach out for inquiries, custom orders, or just to say hello.</p>
         </div>
       </section>
 
-      <div className="page-container py-16">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
+      <div className="page-container py-10 sm:py-12 md:py-16">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
           {/* Contact Form */}
           <div>
-            <h2 className="font-display text-2xl mb-6">Send Us a Message</h2>
+            <h2 className="font-display text-xl sm:text-2xl mb-4 sm:mb-6">Send Us a Message</h2>
             {submitted ? (
-              <div className="bg-cream rounded-lg p-8 text-center">
-                <p className="font-display text-xl mb-2">Thank you!</p>
+              <div className="bg-cream rounded-lg p-6 sm:p-8 text-center">
+                <p className="font-display text-lg sm:text-xl mb-2">Thank you!</p>
                 <p className="text-sm text-warm-gray">We&apos;ll get back to you within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" className="input-luxury" required />
                 <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Email address" className="input-luxury" required />
                 <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="Phone (optional)" className="input-luxury" />
@@ -49,8 +49,8 @@ export default function ContactPage() {
 
           {/* Contact Info */}
           <div>
-            <h2 className="font-display text-2xl mb-6">Visit Our Boutique</h2>
-            <div className="space-y-6 mb-8">
+            <h2 className="font-display text-xl sm:text-2xl mb-4 sm:mb-6">Visit Our Boutique</h2>
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               <div className="flex items-start gap-4">
                 <MapPin size={20} className="text-gold mt-0.5 shrink-0" />
                 <div>
@@ -82,11 +82,11 @@ export default function ContactPage() {
             </div>
 
             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-full text-sm font-medium hover:bg-green-700 transition-colors">
-              <MessageCircle size={18} /> Chat on WhatsApp
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-green-600 text-white rounded-full text-xs sm:text-sm font-medium hover:bg-green-700 active:bg-green-800 transition-colors">
+              <MessageCircle size={16} className="sm:w-[18px] sm:h-[18px]" /> Chat on WhatsApp
             </a>
 
-            <div className="mt-8 aspect-video rounded-xl overflow-hidden shadow-md">
+            <div className="mt-6 sm:mt-8 aspect-video rounded-lg sm:rounded-xl overflow-hidden shadow-md">
               <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800&h=450&fit=crop" alt="Lumière Boutique" className="w-full h-full object-cover" />
             </div>
           </div>

@@ -7,12 +7,12 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Hero */}
-      <section className="bg-cream py-24 md:py-32 border-b border-border">
+      <section className="bg-cream py-14 sm:py-20 md:py-24 lg:py-32 border-b border-border">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">About Lumière</span>
-          <h1 className="font-display text-4xl md:text-6xl font-light mt-3 mb-6 text-charcoal">Our Story</h1>
-          <div className="gold-line mb-6" />
-          <p className="text-base sm:text-lg text-warm-gray max-w-2xl mx-auto leading-relaxed">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">About Lumière</span>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mt-3 mb-4 sm:mb-6 text-charcoal">Our Story</h1>
+          <div className="gold-line mb-4 sm:mb-6" />
+          <p className="text-sm sm:text-base md:text-lg text-warm-gray max-w-2xl mx-auto leading-relaxed">
             Born from a passion for timeless beauty and exceptional craftsmanship, 
             Lumière has been creating heirloom-quality jewelry since 2018.
           </p>
@@ -20,28 +20,28 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="page-container">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
             <div className="aspect-[4/5] rounded-xl overflow-hidden shadow-lg">
               <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&h=750&fit=crop" alt="Our Founder" className="w-full h-full object-cover" />
             </div>
             <div>
-              <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">The Beginning</span>
-              <h2 className="font-display text-3xl md:text-4xl font-light mt-4 mb-6">
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-gold font-medium">The Beginning</span>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light mt-3 sm:mt-4 mb-4 sm:mb-6">
                 A dream born from the love of beautiful things
               </h2>
-              <p className="text-warm-gray leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-warm-gray leading-relaxed mb-4">
                 Lumière was founded with a singular vision: to create jewelry that transcends trends 
                 and speaks to the soul. Every piece we craft is a testament to the belief that true 
                 luxury lies not in ostentation, but in the quiet confidence of exceptional quality.
               </p>
-              <p className="text-warm-gray leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-warm-gray leading-relaxed mb-4">
                 Our journey began in a small workshop in Mumbai, where a team of master artisans 
                 brought our founder&apos;s vision to life. Today, we continue that tradition of 
                 handcrafted excellence, combining time-honored techniques with contemporary design.
               </p>
-              <p className="text-warm-gray leading-relaxed">
+              <p className="text-sm sm:text-base text-warm-gray leading-relaxed">
                 Each Lumière piece passes through the hands of at least five artisans before it 
                 reaches yours — from the initial sketch to the final polish. This is jewelry made 
                 with patience, passion, and an unwavering commitment to perfection.
@@ -52,20 +52,20 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-cream">
+      <section className="py-12 sm:py-16 md:py-20 bg-cream">
         <div className="page-container">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-3xl md:text-4xl font-light mt-4">What We Stand For</h2>
+          <div className="text-center mb-8 sm:mb-10 md:mb-14">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light mt-3 sm:mt-4">What We Stand For</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               { icon: Gem, title: 'Exceptional Craftsmanship', desc: 'Every piece is handcrafted by master artisans with decades of experience, using time-honored techniques passed down through generations.' },
               { icon: Leaf, title: 'Ethical Sourcing', desc: 'We are committed to responsibly sourced gemstones and recycled precious metals. Our supply chain is transparent and conflict-free.' },
               { icon: Heart, title: 'Meaningful Design', desc: 'We believe jewelry should tell a story. Each design is created to carry emotional significance and be treasured for a lifetime.' },
             ].map((value) => (
-              <div key={value.title} className="text-center p-8 bg-white rounded-lg border border-border">
-                <value.icon size={28} className="text-gold mx-auto mb-4" />
-                <h3 className="font-display text-xl mb-3">{value.title}</h3>
+              <div key={value.title} className="text-center p-5 sm:p-6 md:p-8 bg-white rounded-lg border border-border">
+                <value.icon size={24} className="text-gold mx-auto mb-3 sm:mb-4 sm:w-7 sm:h-7" />
+                <h3 className="font-display text-lg sm:text-xl mb-2 sm:mb-3">{value.title}</h3>
                 <p className="text-sm text-warm-gray leading-relaxed">{value.desc}</p>
               </div>
             ))}
@@ -74,18 +74,18 @@ export default function AboutPage() {
       </section>
 
       {/* Workshop */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="page-container">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {[
               { title: 'The Workshop', img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=600&fit=crop' },
               { title: 'Hand Setting', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&h=600&fit=crop' },
               { title: 'Final Polish', img: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&h=600&fit=crop' },
             ].map((item) => (
-              <div key={item.title} className="aspect-square rounded-xl overflow-hidden relative group">
+              <div key={item.title} className="aspect-square rounded-lg sm:rounded-xl overflow-hidden relative group">
                 <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <div className="absolute inset-0 bg-black/30 flex items-end p-6">
-                  <p className="font-display text-white text-lg">{item.title}</p>
+                <div className="absolute inset-0 bg-black/30 flex items-end p-4 sm:p-6">
+                  <p className="font-display text-white text-base sm:text-lg">{item.title}</p>
                 </div>
               </div>
             ))}
@@ -94,13 +94,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="page-container">
-          <div className="text-center mb-14">
-            <span className="text-xs uppercase tracking-[0.3em] text-gold font-medium">The Team</span>
-            <h2 className="font-display text-3xl md:text-4xl font-light mt-4">The Hands Behind the Craft</h2>
+          <div className="text-center mb-8 sm:mb-10 md:mb-14">
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-gold font-medium">The Team</span>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light mt-3 sm:mt-4">The Hands Behind the Craft</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               { name: 'Marie Laurent', role: 'Founder & Creative Director', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face' },
               { name: 'Rajan Patel', role: 'Master Goldsmith', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face' },
@@ -120,16 +120,16 @@ export default function AboutPage() {
       </section>
 
       {/* Sustainability */}
-      <section className="py-20 bg-cream">
+      <section className="py-12 sm:py-16 md:py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Sustainability</span>
-          <h2 className="font-display text-3xl md:text-4xl font-light mt-3 mb-6 text-charcoal">Our Sustainability Pledge</h2>
-          <div className="gold-line mb-6" />
-          <p className="text-warm-gray leading-relaxed mb-4">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-gold-dark font-semibold">Sustainability</span>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-light mt-3 mb-4 sm:mb-6 text-charcoal">Our Sustainability Pledge</h2>
+          <div className="gold-line mb-4 sm:mb-6" />
+          <p className="text-sm sm:text-base text-warm-gray leading-relaxed mb-4">
             We believe luxury and responsibility go hand in hand. By 2027, we pledge to achieve 
             100% recycled precious metals, carbon-neutral operations, and zero-waste packaging.
           </p>
-          <p className="text-warm-gray leading-relaxed">
+          <p className="text-sm sm:text-base text-warm-gray leading-relaxed">
             Every Lumière purchase contributes to our partnership with environmental organizations 
             working to protect natural habitats where gemstones are found.
           </p>
@@ -137,9 +137,9 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-          <h2 className="font-display text-3xl font-light mb-6">Ready to discover your piece?</h2>
+          <h2 className="font-display text-2xl sm:text-3xl font-light mb-4 sm:mb-6">Ready to discover your piece?</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/products" className="btn-primary">Explore Collection</Link>
             <Link href="/custom-orders" className="btn-outline">Create a Custom Piece</Link>

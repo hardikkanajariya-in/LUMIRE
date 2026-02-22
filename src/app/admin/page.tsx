@@ -68,23 +68,23 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-start sm:items-center justify-between gap-3 flex-col sm:flex-row">
         <div>
-          <h1 className="text-2xl font-semibold text-charcoal">Dashboard</h1>
-          <p className="text-sm text-warm-gray">Welcome back! Here is what is happening today.</p>
+          <h1 className="text-xl sm:text-2xl font-semibold text-charcoal">Dashboard</h1>
+          <p className="text-xs sm:text-sm text-warm-gray">Welcome back! Here is what is happening today.</p>
         </div>
-        <span className="text-sm text-warm-gray bg-white border border-gray-200 rounded-lg px-3 py-2">{period}</span>
+        <span className="text-xs sm:text-sm text-warm-gray bg-white border border-gray-200 rounded-lg px-2.5 sm:px-3 py-1.5 sm:py-2">{period}</span>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
         {STATS.map((stat) => {
           const Icon = stat.icon;
           return (
-            <div key={stat.label} className="bg-white rounded-lg border border-gray-200 p-5">
-              <div className="flex items-center justify-between mb-3">
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${stat.color}`}>
-                  <Icon size={20} />
+            <div key={stat.label} className="bg-white rounded-lg border border-gray-200 p-3 sm:p-5">
+              <div className="flex items-center justify-between mb-2 sm:mb-3">
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center ${stat.color}`}>
+                  <Icon size={16} className="sm:w-5 sm:h-5" />
                 </div>
                 <span className={`flex items-center gap-1 text-xs font-medium ${
                   stat.trend === 'up' ? 'text-green-600' : 'text-red-500'
@@ -93,17 +93,17 @@ export default function AdminDashboard() {
                   {stat.change}
                 </span>
               </div>
-              <p className="text-2xl font-semibold text-charcoal">{stat.value}</p>
-              <p className="text-sm text-warm-gray">{stat.label}</p>
+              <p className="text-lg sm:text-2xl font-semibold text-charcoal">{stat.value}</p>
+              <p className="text-xs sm:text-sm text-warm-gray">{stat.label}</p>
             </div>
           );
         })}
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Revenue Chart */}
-        <div className="lg:col-span-2 bg-white rounded-lg border border-gray-200 p-5">
-          <h2 className="text-lg font-semibold text-charcoal mb-4">Revenue Overview</h2>
+        <div className="lg:col-span-2 bg-white rounded-lg border border-gray-200 p-4 sm:p-5">
+          <h2 className="text-base sm:text-lg font-semibold text-charcoal mb-3 sm:mb-4">Revenue Overview</h2>
           <div className="flex items-end gap-1.5 h-48">
             {MONTHLY_REVENUE.map((m) => (
               <div key={m.month} className="flex-1 flex flex-col items-center gap-1">
@@ -117,7 +117,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Top Products */}
-        <div className="bg-white rounded-lg border border-gray-200 p-5">
+        <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-5">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-charcoal">Top Products</h2>
             <Link href="/admin/products" className="text-xs text-gold hover:underline">View All</Link>
@@ -140,9 +140,9 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Recent Orders */}
-        <div className="bg-white rounded-lg border border-gray-200 p-5">
+        <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-5">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-charcoal">Recent Orders</h2>
             <Link href="/admin/orders" className="text-xs text-gold hover:underline flex items-center gap-1">
@@ -179,7 +179,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Low Stock Alerts */}
-        <div className="bg-white rounded-lg border border-gray-200 p-5">
+        <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-5">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-charcoal flex items-center gap-2">
               <AlertTriangle size={18} className="text-orange-500" />

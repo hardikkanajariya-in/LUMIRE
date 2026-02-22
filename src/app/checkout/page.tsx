@@ -114,11 +114,11 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-8">
-        <h1 className="font-display text-3xl font-light mb-8 text-center">Checkout</h1>
+      <div className="max-w-6xl mx-auto px-4 sm:px-5 md:px-8 lg:px-12 py-6 sm:py-8">
+        <h1 className="font-display text-2xl sm:text-3xl font-light mb-6 sm:mb-8 text-center">Checkout</h1>
 
         {/* Steps */}
-        <div className="flex items-center justify-center gap-4 mb-12">
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
           {steps.map((s, i) => (
             <div key={s.num} className="flex items-center">
               <button onClick={() => s.num < step && setStep(s.num)}
@@ -128,28 +128,28 @@ export default function CheckoutPage() {
                 </div>
                 <span className="text-xs uppercase tracking-wider hidden sm:inline">{s.label}</span>
               </button>
-              {i < steps.length - 1 && <ChevronRight size={16} className="mx-4 text-light-gray" />}
+              {i < steps.length - 1 && <ChevronRight size={14} className="mx-1 sm:mx-4 text-light-gray" />}
             </div>
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Form */}
           <div className="lg:col-span-3">
             {step === 1 && (
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <h2 className="font-display text-xl mb-4">Contact Information</h2>
+                  <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">Contact Information</h2>
                   <input type="email" value={formData.email} onChange={(e) => updateField('email', e.target.value)}
                     placeholder="Email address" className="input-luxury" />
                 </div>
                 <div>
-                  <h2 className="font-display text-xl mb-4">Shipping Address</h2>
-                  <div className="grid grid-cols-2 gap-4">
-                    <input type="text" value={formData.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Full name" className="input-luxury col-span-2" />
-                    <input type="tel" value={formData.phone} onChange={(e) => updateField('phone', e.target.value)} placeholder="Phone number" className="input-luxury col-span-2" />
-                    <input type="text" value={formData.addressLine1} onChange={(e) => updateField('addressLine1', e.target.value)} placeholder="Address line 1" className="input-luxury col-span-2" />
-                    <input type="text" value={formData.addressLine2} onChange={(e) => updateField('addressLine2', e.target.value)} placeholder="Address line 2 (optional)" className="input-luxury col-span-2" />
+                  <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">Shipping Address</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <input type="text" value={formData.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Full name" className="input-luxury sm:col-span-2" />
+                    <input type="tel" value={formData.phone} onChange={(e) => updateField('phone', e.target.value)} placeholder="Phone number" className="input-luxury sm:col-span-2" />
+                    <input type="text" value={formData.addressLine1} onChange={(e) => updateField('addressLine1', e.target.value)} placeholder="Address line 1" className="input-luxury sm:col-span-2" />
+                    <input type="text" value={formData.addressLine2} onChange={(e) => updateField('addressLine2', e.target.value)} placeholder="Address line 2 (optional)" className="input-luxury sm:col-span-2" />
                     <input type="text" value={formData.city} onChange={(e) => updateField('city', e.target.value)} placeholder="City" className="input-luxury" />
                     <input type="text" value={formData.state} onChange={(e) => updateField('state', e.target.value)} placeholder="State" className="input-luxury" />
                     <input type="text" value={formData.pincode} onChange={(e) => updateField('pincode', e.target.value)} placeholder="Pincode" className="input-luxury" />
@@ -161,8 +161,8 @@ export default function CheckoutPage() {
             )}
 
             {step === 2 && (
-              <div className="space-y-6">
-                <h2 className="font-display text-xl mb-4">Shipping Method</h2>
+              <div className="space-y-3 sm:space-y-6">
+                <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">Shipping Method</h2>
                 {([
                   { value: 'standard' as ShippingMethodType, label: 'Standard Shipping', desc: '5–7 business days', price: subtotal >= 5000 ? 'Free' : '₹200' },
                   { value: 'express' as ShippingMethodType, label: 'Express Shipping', desc: '2–3 business days', price: '₹200' },
@@ -185,8 +185,8 @@ export default function CheckoutPage() {
             )}
 
             {step === 3 && (
-              <div className="space-y-6">
-                <h2 className="font-display text-xl mb-4">Payment Method</h2>
+              <div className="space-y-3 sm:space-y-6">
+                <h2 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">Payment Method</h2>
                 {([
                   { value: 'upi' as PaymentMethodType, label: 'UPI', icon: Smartphone, desc: 'Pay using Google Pay, PhonePe, etc.' },
                   { value: 'card' as PaymentMethodType, label: 'Credit / Debit Card', icon: CreditCard, desc: 'Visa, Mastercard, RuPay' },
@@ -212,8 +212,8 @@ export default function CheckoutPage() {
 
           {/* Order Summary */}
           <div className="lg:col-span-2">
-            <div className="bg-white border border-border rounded-lg p-6 sticky top-24">
-              <h3 className="font-display text-lg mb-4">Order Summary</h3>
+            <div className="bg-white border border-border rounded-lg p-4 sm:p-6 sticky top-24">
+              <h3 className="font-display text-base sm:text-lg mb-3 sm:mb-4">Order Summary</h3>
               <div className="space-y-3 mb-4">
                 {cartProducts.map((item) => (
                   <div key={`${item.productId}-${item.variantId}`} className="flex gap-3">
