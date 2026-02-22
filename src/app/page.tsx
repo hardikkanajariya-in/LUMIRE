@@ -82,7 +82,7 @@ function CategoryRow() {
           <h2 className="font-display text-3xl md:text-4xl font-light">Shop by Category</h2>
           <p className="text-sm text-warm-gray mt-3">Find the perfect piece for every occasion</p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8">
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8">
           {categories.map((cat) => (
             <Link key={cat.id} href={`/products?category=${cat.slug}`} className="group text-center">
               <div className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-2 border-border group-hover:border-gold transition-all duration-300 mx-auto mb-3 shadow-sm">
@@ -110,7 +110,7 @@ function ProductSection({ title, subtitle, items }: { title: string; subtitle: s
             View All <ArrowRight size={14} />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {items.slice(0, 8).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
