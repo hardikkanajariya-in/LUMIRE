@@ -228,27 +228,73 @@ function Newsletter() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section className="py-24 md:py-36 bg-cream relative overflow-hidden">
+    <section className="py-24 md:py-36 bg-champagne/40 relative overflow-hidden">
+      {/* Decorative border top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
       {/* Subtle decorative pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #C9A84C 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-      
-      <div className="relative max-w-xl mx-auto px-5 sm:px-8 text-center">
-        <Diamond size={20} className="text-gold mx-auto mb-5" />
-        <h2 className="font-display text-3xl md:text-4xl text-charcoal font-light mb-3">Join the Inner Circle</h2>
-        <div className="gold-line mt-3 mb-5" />
-        <p className="text-warm-gray text-sm mb-8 max-w-md mx-auto leading-relaxed">Be the first to know about new collections, exclusive offers, and the stories behind our craft.</p>
+
+      <div className="relative max-w-2xl mx-auto px-5 sm:px-8 text-center">
+        {/* Icon */}
+        <div className="flex justify-center mb-6">
+          <Diamond size={22} className="text-gold" />
+        </div>
+
+        {/* Heading */}
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-charcoal font-light mb-4">
+          Join the <span className="italic text-gold-dark">Inner Circle</span>
+        </h2>
+
+        {/* Decorative line */}
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="w-12 h-px bg-gold/40" />
+          <Diamond size={10} className="text-gold/50" />
+          <div className="w-12 h-px bg-gold/40" />
+        </div>
+
+        {/* Description */}
+        <p className="text-warm-gray text-sm sm:text-base mb-10 max-w-lg mx-auto leading-relaxed">
+          Be the first to know about new collections, exclusive offers, and the stories behind our craft.
+        </p>
+
+        {/* Form or Success */}
         {submitted ? (
-          <div className="fade-up">
-            <p className="text-gold-dark font-display text-xl">Welcome to the family</p>
-            <p className="text-warm-gray text-sm mt-2">We&apos;ll be in touch soon.</p>
+          <div className="fade-up py-4">
+            <div className="flex justify-center mb-4">
+              <Diamond size={16} className="text-gold" />
+            </div>
+            <p className="text-gold-dark font-display text-xl sm:text-2xl mb-2">Welcome to the family</p>
+            <p className="text-warm-gray text-sm">We&apos;ll be in touch with something special soon.</p>
           </div>
         ) : (
-          <form onSubmit={(e) => { e.preventDefault(); if (email) setSubmitted(true); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" required className="flex-1 px-5 py-3.5 bg-white border border-border text-charcoal placeholder-warm-gray/50 rounded-full text-sm outline-none focus:border-gold transition-colors shadow-sm" />
-            <button type="submit" className="btn-primary whitespace-nowrap">Subscribe</button>
+          <form
+            onSubmit={(e) => { e.preventDefault(); if (email) setSubmitted(true); }}
+            className="max-w-xl mx-auto"
+          >
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="w-full sm:flex-1 px-6 py-4 bg-white border border-border text-charcoal placeholder-warm-gray/50 rounded-full text-sm outline-none focus:border-gold focus:ring-1 focus:ring-gold/20 transition-all shadow-sm"
+              />
+              <button
+                type="submit"
+                className="w-full sm:w-auto btn-primary px-10 py-4 text-sm whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+            <p className="text-warm-gray/60 text-xs mt-4 tracking-wide">No spam, ever. Unsubscribe anytime.</p>
           </form>
         )}
       </div>
+
+      {/* Decorative border bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
     </section>
   );
 }

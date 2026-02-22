@@ -11,12 +11,12 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const isAdmin = pathname.startsWith('/admin');
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       {!isAdmin && <Header />}
       {!isAdmin && <CartDrawer />}
       {!isAdmin && <SearchOverlay />}
-      <main className="min-w-0 overflow-x-hidden">{children}</main>
+      <main className="flex-1 min-w-0 overflow-x-hidden">{children}</main>
       {!isAdmin && <Footer />}
-    </>
+    </div>
   );
 }

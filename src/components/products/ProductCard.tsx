@@ -32,12 +32,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
 
         {/* Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+        <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 flex flex-col gap-1.5">
           {product.isNewArrival && (
-            <span className="badge badge-gold text-[10px]">New</span>
+            <span className="badge badge-gold text-[9px] sm:text-[10px]">New</span>
           )}
           {product.salePrice && (
-            <span className="badge badge-rose text-[10px]">
+            <span className="badge badge-rose text-[9px] sm:text-[10px]">
               -{getDiscountPercentage(product.originalPrice, product.salePrice)}%
             </span>
           )}
@@ -46,12 +46,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Wishlist */}
         <button
           onClick={toggleWishlist}
-          className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center transition-all hover:bg-white hover:scale-110 shadow-sm"
+          className="absolute top-2.5 sm:top-3 right-2.5 sm:right-3 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center transition-all hover:bg-white hover:scale-110 active:scale-95 shadow-sm"
           aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         >
           <Heart
-            size={15}
-            className={wishlisted ? 'fill-rose text-rose' : 'text-warm-gray'}
+            size={14}
+            className={`sm:[&]:w-[15px] sm:[&]:h-[15px] ${wishlisted ? 'fill-rose text-rose' : 'text-warm-gray'}`}
           />
         </button>
 
@@ -61,29 +61,29 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Info */}
       <div className="product-info">
-        <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.15em] text-gold-dark mb-1.5 font-medium">
+        <p className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] text-gold-dark mb-1 sm:mb-1.5 font-medium">
           {product.category}
         </p>
-        <h3 className="font-display text-base sm:text-lg font-semibold text-charcoal leading-snug mb-2 line-clamp-1">
+        <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold text-charcoal leading-snug mb-1.5 sm:mb-2 line-clamp-1">
           {product.name}
         </h3>
-        <div className="flex items-baseline gap-2.5">
-          <span className="font-display text-lg sm:text-xl font-semibold text-gold-dark">
+        <div className="flex items-baseline gap-2 sm:gap-2.5 flex-wrap">
+          <span className="font-display text-base sm:text-lg md:text-xl font-semibold text-gold-dark">
             {formatPrice(product.salePrice || product.originalPrice)}
           </span>
           {product.salePrice && (
-            <span className="text-xs text-warm-gray line-through">
+            <span className="text-[10px] sm:text-xs text-warm-gray line-through">
               {formatPrice(product.originalPrice)}
             </span>
           )}
         </div>
         {/* Rating */}
-        <div className="flex items-center gap-1.5 mt-2.5 pt-2.5 border-t border-border/60">
+        <div className="flex items-center gap-1 sm:gap-1.5 mt-2 sm:mt-2.5 pt-2 sm:pt-2.5 border-t border-border/60">
           <div className="flex gap-0.5">
             {[1, 2, 3, 4, 5].map((star) => (
               <svg
                 key={star}
-                className={`w-3.5 h-3.5 ${
+                className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${
                   star <= Math.round(product.rating)
                     ? 'text-gold fill-gold'
                     : 'text-light-gray fill-light-gray'
@@ -94,7 +94,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </svg>
             ))}
           </div>
-          <span className="text-[11px] text-warm-gray">({product.reviewCount})</span>
+          <span className="text-[10px] sm:text-[11px] text-warm-gray">({product.reviewCount})</span>
         </div>
       </div>
     </Link>
